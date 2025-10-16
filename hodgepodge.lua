@@ -617,8 +617,8 @@ HODGE.load_script("objects/jokers/pokemon/eeeee.lua")
 HODGE.load_script("objects/jokers/pokemon/runerigus.lua")
 
 HODGE.load_script("objects/jokers/mlp/timeloop.lua") --this fucker is soooooo broken
-HODGE.load_script("objects/jokers/mlp/celestia.lua")
 HODGE.load_script("objects/jokers/mlp/flutterbat.lua")
+HODGE.load_script("objects/jokers/mlp/celestia.lua") -- i moved celestia to be in the middle lol
 HODGE.load_script("objects/jokers/mlp/cheesesandwich.lua")
 HODGE.load_script("objects/jokers/mlp/foreverweedbrownie.lua")
 
