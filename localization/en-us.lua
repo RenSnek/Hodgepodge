@@ -734,8 +734,8 @@ return {
 			["j_hodge_applesleepexperiment"] = {
 				["name"] = "Apple Sleep Experiment",
 				["text"] = {
-					"{C:attention}Unscored{} and {C:attention}debuffed{} cards",
-					"are instead scored and",
+					"{C:attention}Unscored{} or {C:attention}debuffed{} cards",
+					"are rebuffed, scored and",
 					"{C:attention}retriggered #1# times{}"
 				},
 			},
