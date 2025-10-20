@@ -3,6 +3,19 @@ SMODS.Shader {
     path = "slime.fs"
 }
 
+SMODS.Sound {
+    key = "spawn_slime",
+    path = "sfx_spawn_slime.ogg"
+}
+SMODS.Sound {
+    key = "trigger_slime_bad",
+    path = "sfx_trigger_slime_bad.ogg"
+}
+SMODS.Sound {
+    key = "trigger_slime_good",
+    path = "sfx_trigger_slime_good.ogg"
+}
+
 SMODS.Edition {
     key = "terry",
     shader = "slime",
@@ -65,6 +78,7 @@ SMODS.Edition {
             increment = 0.1
         }
     },
+    sound = {sound = "hodge_spawn_slime", per = 1, vol = 0.6},
     in_shop = true,
     weight = 10,
     get_weight = function(self)
@@ -99,7 +113,15 @@ SMODS.Edition {
             local min = lumi and lumi_val or card.edition.extra.lower_bound
             local max = card.edition.extra.upper_bound
             local value = inc*math.ceil(((rand*(max-min))+min)/inc)
-            return {x_mult = value}
+            local sound = nil
+            if value > 1 then
+                sound = "hodge_trigger_slime_good"
+            elseif value < 1 then
+                sound = "hodge_trigger_slime_bad"
+            end
+            print(sound)
+            return {x_mult = value, sound = sound, volume = 1.8, message = "X"..value.." Mult", remove_default_message = false, colour = G.C.DARK_EDITION}
         end
     end
 }
+

@@ -191,13 +191,13 @@ return {
 					"a random Joker",
 				},
 			},
-			["c_hodge_immortality"] = {
-				["name"] = "Immortality",
-				["text"] = {
-					"Select {C:attention}#1#{} card to",
-					"apply {C:attention}Revive{}",
-				},
-			},
+			-- ["c_hodge_immortality"] = {
+			-- 	["name"] = "Immortality",
+			-- 	["text"] = {
+			-- 		"Select {C:attention}#1#{} card to",
+			-- 		"apply {C:attention}Revive{}",
+			-- 	},
+			-- },
 			["c_hodge_symbiosis"] = {
 				["name"] = "Symbiosis",
 				["text"] = {
@@ -205,13 +205,13 @@ return {
 					"a random Joker",
 				},
 			},
-			["c_hodge_friendship"] = {
-				["name"] = "Friendship",
-				["text"] = {
-					"Select {C:attention}#1#{} card to",
-					"apply {C:attention}Element of Magic{}",
-				},
-			},
+			-- ["c_hodge_friendship"] = {
+			-- 	["name"] = "Friendship",
+			-- 	["text"] = {
+			-- 		"Select {C:attention}#1#{} card to",
+			-- 		"apply {C:attention}Element of Magic{}",
+			-- 	},
+			-- },
 		},
 		["perk"] = {
 			["c_hodge_crumb"] = {
@@ -367,13 +367,14 @@ return {
 				["label"] = "Revive",
 				["name"] = "Revive",
 				["text"] = {
-					"Creates {C:attention}#1#{} copies of this",
+					"Creates {C:attention}#1#{} copy of this",
 					"card when {C:attention}destroyed{}",
 				},
 			},
+			
 			["compat_standard_hodge_default"] = {
-				name = "Hodgepodge",
-				text = {
+				["name"] = "Hodgepodge",
+				["text"] = {
 					"This card uses",
 					"Hodgepodge",
 					"Value Manipulation"
@@ -927,6 +928,24 @@ return {
 					"poker hand by {C:attention}#1# levels{}",
 					"and {C:attention}2nd least used{}",
 					"poker hand by {C:attention}#2# levels{}",
+				},
+			},
+		},
+		["Spectral"] = {
+			["c_hodge_ouroboros"] = {
+				["name"] = "Ouroboros",
+				["text"] = {
+					"Add a {C:green}Revive{} to ",
+					"{C:attention}#1#{} selected card",
+					"in your hand",
+				},
+			},
+			["c_hodge_coven"] = {
+				["name"] = "Coven",
+				["text"] = {
+					"Add {C:legendary}Element of Magic{}",
+					"to {C:attention}#1#{} selected",
+					"card in your hand",
 				},
 			},
 		},

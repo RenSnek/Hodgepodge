@@ -3,7 +3,7 @@ SMODS.Seal {
     badge_colour = HEX("20D71D"),
     config = {
         extra = {
-            copies = 2
+            copies = 1
         }
     },
     -- loc_txt = {

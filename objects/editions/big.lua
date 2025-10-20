@@ -3,6 +3,11 @@ SMODS.Shader {
     path = "big.fs"
 }
 
+SMODS.Sound {
+    key = "spawn_big",
+    path = "sfx_spawn_big.ogg"
+}
+
 SMODS.Edition {
     key = "big",
     shader = "big", -- Big shader currently doesn't do anything, as scale is handled in on_apply, on_load, etc.
@@ -31,6 +36,7 @@ SMODS.Edition {
     config = {
         card_limit = -1
     },
+    sound = {sound = "hodge_spawn_big", per = 1, vol = 0.6},
     in_shop = true,
     weight = 10,
     get_weight = function(self)

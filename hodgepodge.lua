@@ -506,8 +506,9 @@ HODGE.load_script("hooks/general.lua")
 -- Custom Types
 HODGE.load_script("objects/consumables/power.lua")
 HODGE.load_script("objects/consumables/perk.lua")
--- Planets
-HODGE.load_script("objects/consumables/avalon.lua")
+-- Vanilla Types
+HODGE.load_script("objects/consumables/planet.lua")
+HODGE.load_script("objects/consumables/spectral.lua")
 
 ------ Editions ------
 HODGE.load_script("objects/editions/big.lua")

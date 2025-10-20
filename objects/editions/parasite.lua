@@ -3,6 +3,19 @@ SMODS.Shader {
     path = "parasite.fs"
 }
 
+SMODS.Sound {
+    key = "spawn_parasite",
+    path = "sfx_spawn_parasite.ogg"
+}
+SMODS.Sound {
+    key = "parasite_degrade",
+    path = "sfx_parasite_degrade.ogg"
+}
+SMODS.Sound {
+    key = "parasite_infect",
+    path = "sfx_parasite_infect.ogg"
+}
+
 SMODS.Edition {
     key = "parasite",
     shader = "parasite",
@@ -33,6 +46,7 @@ SMODS.Edition {
             has_scored = false
         }
     },
+    sound = {sound = "hodge_spawn_parasite", per = 1, vol = 0.6},
     in_shop = true,
     weight = 8,
     get_weight = function(self)
@@ -65,17 +79,30 @@ SMODS.Edition {
                             local over = false
                             local temp_pool = eligible_editionless_cards or {}
                             local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
-                            eligible_card:set_edition({["hodge_parasite"] = true}, true)
+                            if eligible_card then
+                                eligible_card:set_edition({["hodge_parasite"] = true}, true)
+                            end
                             check_for_unlock({type = 'have_edition'})
                         end
+                        play_sound("hodge_parasite_infect", 1, 0.6)
                         -- G.hand:remove_card(card)
                         -- card:remove()
                         -- card = nil
                         return true
                     end
                 }
+            else
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.3,
+                    blockable = false,
+                    func = function()
+                        play_sound("hodge_parasite_degrade", 1, 0.6)
+                        return true;
+                    end
+                }))
             end
-            return {message = "-"..card.edition.extra.decrease.."X"} 
+            return {message = "-"..card.edition.extra.decrease.."X"}
         end
 
         if context.end_of_round and context.main_eval and context.cardarea == G.jokers and card.edition.extra.has_scored then
@@ -92,7 +119,9 @@ SMODS.Edition {
                     local over = false
                     local temp_pool = eligible_editionless_jokers or {}
                     local eligible_card = pseudorandom_element(temp_pool, pseudoseed("parasite"))
-                    eligible_card:set_edition({["hodge_parasite"] = true}, true)
+                    if eligible_card then
+                        eligible_card:set_edition({["hodge_parasite"] = true}, true)
+                    end
                     check_for_unlock({type = 'have_edition'})
                 end
                 G.E_MANAGER:add_event(Event({
@@ -103,10 +132,21 @@ SMODS.Edition {
                         G.jokers:remove_card(card)
                         card:remove()
                         card = nil
+                        play_sound("hodge_parasite_infect", 1, 0.6)
                         return true;
                     end
                 }))
                 return {message = "Drained!"}
+            else
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.3,
+                    blockable = false,
+                    func = function()
+                        play_sound("hodge_parasite_degrade", 1, 0.6)
+                        return true;
+                    end
+                }))
             end
             return {message = "-"..card.edition.extra.decrease.."X"}   
         end
