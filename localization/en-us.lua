@@ -76,7 +76,7 @@ return {
 			["hodge_loyalty_seal"] = "Element of Harmony",
 			["hodge_revive_seal"] = "Revive",
 			["hodge_big"] = "Big",
-			["hodge_terry"] = "Slime",
+			["hodge_terry"] = "Slimy",
 			["hodge_parasite"] = "Parasite",
 			["hodge_generosity_seal"] = "Element of Harmony",
 			["hodge_laughter_seal"] = "Element of Harmony",
@@ -159,7 +159,7 @@ return {
 			["c_hodge_chaos"] = {
 				["name"] = "Chaos",
 				["text"] = {
-					"Apply {C:dark_edition}Slime{} to",
+					"Apply {C:dark_edition}Slimy{} to",
 					"a random Joker",
 				},
 			},
@@ -742,9 +742,9 @@ return {
 			["j_hodge_lumi"] = {
 				["name"] = "Lumi",
 				["text"] = {
-					"Cards with the {C:dark_edition}Slime{} edition",
+					"Cards with the {C:dark_edition}Slimy{} edition",
 					"never give below {X:mult,C:white}X2{} Mult",
-					"{C:dark_edition}Slime{} cards are {C:attention}2X{} more common",
+					"{C:dark_edition}Slimy{} cards are {C:attention}2X{} more common",
 
 				},
 			},
@@ -1008,8 +1008,8 @@ return {
 				},
 			},
 			["e_hodge_terry"] = {
-				["label"] = "Slime",
-				["name"] = "Slime",
+				["label"] = "Slimy",
+				["name"] = "Slimy",
 				["text"] = {
 					"{s:0.9,C:inactive}Random XMult{}",
 				},
