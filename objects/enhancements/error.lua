@@ -33,7 +33,7 @@ SMODS.Enhancement {
             local strength_boost = (card.ability.extra.strength * error_cards)
             print(self_index,strength_boost)
             for k,joker in ipairs(G.jokers.cards) do
-                Blockbuster.manipulate_value(joker,"hodge_error",strength_boost,true)
+                Blockbuster.manipulate_value(joker,"hodge_error",strength_boost,nil,true)
                 print(joker:get_multiplier_by_source(joker, "hodge_error"))
             end
         end
