@@ -31,8 +31,8 @@ SMODS.ConsumableType {
         ["aquakinesis"] = true,
         ["toxigenesis"] = true,
         ["symbiosis"] = true,
-        ["friendship"] = true
-        -- ["glitch"] = true
+        ["friendship"] = true,
+        ["glitch"] = true
     },
     collection_rows = {3,3},
     shop_rate = 1,
@@ -101,7 +101,7 @@ SMODS.Consumable { -- Umbrakinesis (Applies Black Hole)
         return {vars = {(card.ability or self.config).max_highlighted}}
     end,
     can_use = function(self,card)
-        return #G.hand.highlighted == card.ability.max_highlighted
+        return #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0
     end,
     use = function(self,card,area,copier)
         for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
@@ -179,7 +179,7 @@ SMODS.Consumable { -- Dimension (Applies Big)
 --         return {vars = {(card.ability or self.config).max_highlighted}}
 --     end,
 --     can_use = function(self,card)
---         return #G.hand.highlighted == card.ability.max_highlighted
+--         return #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0
 --     end,
 --     use = function(self,card,area,copier)
 --         for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
@@ -205,7 +205,7 @@ SMODS.Consumable { -- Aquakinesis (Applies Water Damage)
     pos = {x=2,y=1},
     cost = 3,
     config = {
-        max_highlighted = 1,
+        max_highlighted = 2,
         extra = "m_hodge_waterdamage"
     },
     loc_vars = function(self, info_queue, card)
@@ -213,7 +213,7 @@ SMODS.Consumable { -- Aquakinesis (Applies Water Damage)
         return {vars = {(card.ability or self.config).max_highlighted}}
     end,
     can_use = function(self,card)
-        return #G.hand.highlighted == card.ability.max_highlighted
+        return #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0
     end,
     use = function(self,card,area,copier)
         for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
@@ -247,7 +247,7 @@ SMODS.Consumable { -- Toxigenesis (Applies Asbestos)
         return {vars = {(card.ability or self.config).max_highlighted}}
     end,
     can_use = function(self,card)
-        return #G.hand.highlighted == card.ability.max_highlighted
+        return #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0
     end,
     use = function(self,card,area,copier)
         for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
@@ -323,7 +323,7 @@ SMODS.Consumable { -- Symbiosis (Applies Parasite)
 --         return {vars = {(card.ability or self.config).max_highlighted}}
 --     end,
 --     can_use = function(self,card)
---         return #G.hand.highlighted == card.ability.max_highlighted
+--         return #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0
 --     end,
 --     use = function(self,card,area,copier)
 --         for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
@@ -344,28 +344,55 @@ SMODS.Consumable { -- Symbiosis (Applies Parasite)
 
 -- GLITCH CURRENTLY CAN'T WORK, AS ANIMATED CONSUMABLES ARENT POSSIBLE WITHOUT PATCHING YET
 
--- SMODS.Consumable { -- Glitch (Currently useless)
---     key = "glitch",
---     set = "power",
---     atlas = "anim_power_atlas",
---     pos = {x=0,y=0},
---     soul_pos = {x=0,y=1},
---     cost = 3,
---     config = {
---         max_highlighted = 1,
---         extra = "e_hodge_glitch"
---     },
---     loc_vars = function(self, info_queue, card)
---         --info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra]
---         return {vars = {(card.ability or self.config).max_highlighted}}
---     end,
---     can_use = function(self,card)
---         return true
---     end,
---     use = function(self,card,area,copier)
---     end
--- }
-
+SMODS.Consumable { -- Glitch (Currently useless)
+    key = "glitch",
+    set = "power",
+    atlas = "anim_power_atlas",
+    pos = {x=0,y=0},
+    soul_pos = {x=0,y=1},
+    cost = 5,
+    config = {
+        max_highlighted = 2,
+        extra = {
+            enhancement = "m_hodge_error",
+            -- ticks = 0,
+            -- ticks_per_frame = 1,
+            -- frames = 15
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = G.P_CENTERS[(card.ability or self.config).extra.enhancement]
+        return {vars = {(card.ability or self.config).max_highlighted}}
+    end,
+    can_use = function(self,card)
+        return #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0
+    end,
+    use = function(self,card,area,copier)
+        for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
+            G.E_MANAGER:add_event(Event({func = function()
+                play_sound("tarot1")
+                card:juice_up(0.3, 0.5)
+                return true end}))
+            
+            G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
+                G.hand.highlighted[i]:set_ability(G.P_CENTERS[card.ability.extra.enhancement])
+                return true end}))
+            
+            delay(0.5)
+        end
+        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function() G.hand:unhighlight_all(); return true end}))
+    end,
+    -- update = function(self,card,dt)
+    --     if card and card.ability then
+    --         card.ability.extra.ticks = card.ability.extra.ticks + dt
+    --         if card.ability.extra.ticks >= card.ability.extra.ticks_per_frame then
+    --             card.ability.extra.ticks = card.ability.extra.ticks - card.ability.extra.ticks_per_frame
+    --             card.config.center.pos.x = math.mod(card.config.center.pos.x + 1, card.ability.extra.frames - 1)
+    --         end
+    --     end
+    -- end
+    ---- The above actually changes the base sprite for all glitch cards, which is jankyyy. card.children.center:set_sprite_pos might work but it still doesn't run in the collection, packs, etc
+}
 
 --- BOOSTERS ---
 

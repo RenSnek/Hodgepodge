@@ -408,12 +408,12 @@ SMODS.Atlas { --stupid game wont let me have square shaped undiscoveredsprite so
 }
 
 SMODS.Atlas {
-    atlas_table = 'ANIMATION_ATLAS',
+    -- atlas_table = 'ANIMATION_ATLAS',
     key = "anim_power_atlas",
     path = "animated_powers.png",
     px = 71,
     py = 95,
-    frames = 15
+    -- frames = 15
 }
 
 SMODS.Atlas {
@@ -520,6 +520,7 @@ HODGE.load_script("objects/editions/glitch.lua")
 HODGE.load_script("objects/enhancements/asbestos.lua")
 HODGE.load_script("objects/enhancements/blackhole.lua")
 HODGE.load_script("objects/enhancements/waterdamage.lua")
+HODGE.load_script("objects/enhancements/error.lua")
 
 ------ Seals ------
 -- Misc

@@ -178,9 +178,9 @@ return {
 				},
 			},
 			["c_hodge_aquakinesis"] = {
-				["name"] = "Water Damage",
+				["name"] = "Aquakinesis",
 				["text"] = {
-					"Select {C:attention}#1#{} card to apply",
+					"Select {C:attention}#1#{} cards to apply",
 					"{C:attention}Water Damage{} enhancement",
 				},
 			},
@@ -212,6 +212,13 @@ return {
 			-- 		"apply {C:attention}Element of Magic{}",
 			-- 	},
 			-- },
+			["c_hodge_glitch"] = {
+				["name"] = "Glitch",
+				["text"] = {
+					"Select {C:attention}#1#{} cards to apply",
+					"{C:attention}ERROR{} enhancement",
+				},
+			},
 		},
 		["perk"] = {
 			["c_hodge_crumb"] = {
@@ -979,10 +986,19 @@ return {
 				["label"] = "Water Damaged",
 				["name"] = "Water Damaged",
 				["text"] = {
-					"{C:chips}+#1#{} bonus chips",
-					"{C:green}#2#/100{} chance to",
+					"{C:chips}+#1#{} extra chips",
+					"{C:green}#2# in #3#{} chance to",
 					"destroy card",
-					"{C:chips,s:0.9}+10{s:0.9} and {C:green,s:0.9}+5/100{s:0.9} when scored{}",
+					"{C:chips,s:0.9}+#4#{s:0.9} and {C:green,s:0.9}+#5# in #3#{s:0.9} when scored{}",
+				},
+			},
+			["m_hodge_error"] = {
+				["label"] = "ERROR",
+				["name"] = "ERROR",
+				["text"] = {
+					"{C:attention}+#1#%{} strength to all",
+					"{C:attention}Jokers{} this hand",
+					"no rank or suit"
 				},
 			},
 		},
