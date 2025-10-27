@@ -514,7 +514,7 @@ HODGE.load_script("objects/consumables/spectral.lua")
 HODGE.load_script("objects/editions/big.lua")
 HODGE.load_script("objects/editions/terry.lua")
 HODGE.load_script("objects/editions/parasite.lua")
-HODGE.load_script("objects/editions/glitch.lua")
+HODGE.load_script("objects/editions/lenticular.lua")
 
 ------ Enhancements ------
 HODGE.load_script("objects/enhancements/asbestos.lua")

@@ -70,16 +70,18 @@ return {
 			["k_perk"] = "Perk Card",
 		},
 		["labels"] = {
-			["hodge_honesty_seal"] = "Element of Harmony",
-			["hodge_kindness_seal"] = "Element of Harmony",
-			["hodge_magic_seal"] = "Element of Harmony",
-			["hodge_loyalty_seal"] = "Element of Harmony",
+			["hodge_honesty_seal"]    = "Element of Harmony",
+			["hodge_kindness_seal"]   = "Element of Harmony",
+			["hodge_magic_seal"]      = "Element of Harmony",
+			["hodge_loyalty_seal"]    = "Element of Harmony",
+			["hodge_generosity_seal"] = "Element of Harmony",
+			["hodge_laughter_seal"]   = "Element of Harmony",
 			["hodge_revive_seal"] = "Revive",
+
 			["hodge_big"] = "Big",
 			["hodge_terry"] = "Slimy",
 			["hodge_parasite"] = "Parasite",
-			["hodge_generosity_seal"] = "Element of Harmony",
-			["hodge_laughter_seal"] = "Element of Harmony",
+			["hodge_lenticular"] = "Lenticular",
 		},
 		["collab_palettes"] = {
 			["default_hodge_snake"] = {
@@ -1028,6 +1030,13 @@ return {
 				["name"] = "Slimy",
 				["text"] = {
 					"{s:0.9,C:inactive}Random XMult{}",
+				},
+			},
+			["e_hodge_lenticular"] = {
+				["label"] = "Lenticular",
+				["name"] = "Lenticular",
+				["text"] = {
+					"{C:purple}Balance{} {C:attention}#1#%{} of score",
 				},
 			},
 		},
