@@ -25,30 +25,30 @@ SMODS.Joker {
             for i,joker in ipairs(G.jokers.cards) do
                 if joker == card then
                     local source_id = "hodge_djungelskog_"..card.sort_id
-                    -- print(card.ability.extra.last_left_joker)
+                    --printcard.ability.extra.last_left_joker)
                     if G.jokers.cards[i-1] then --If there's a joker to the left
                         if G.jokers.cards[i-1] ~= HODGE.joker_from_sort_id(card.ability.extra.last_left_joker) then --If it isn't the last known joker to the left
-                            print("--- LEFT ---")
-                            print(card.ability.extra)
-                            print(source_id.."_left")
+                            --print"--- LEFT ---")
+                            --printcard.ability.extra)
+                            --printsource_id.."_left")
                             local left_joker = HODGE.joker_from_sort_id(card.ability.extra.last_left_joker)
                             if left_joker ~= nil then --If there's a last known left joker
-                                print("Reset "..left_joker.ability.name)
+                                --print"Reset "..left_joker.ability.name)
                                 Blockbuster.manipulate_value(left_joker,source_id.."_left",1) --Reset last known left joker
                             end
-                            print("Multiply "..G.jokers.cards[i-1].ability.name.." "..G.jokers.cards[i-1].sort_id)
+                            --print"Multiply "..G.jokers.cards[i-1].ability.name.." "..G.jokers.cards[i-1].sort_id)
                             card.ability.extra.last_left_joker = G.jokers.cards[i-1].sort_id --Update last known left joker to current left joker
-                            print((card.ability.extra.last_left_joker or "nil").." | "..G.jokers.cards[i-1].sort_id)
-                            print(card.ability.extra)
+                            --print(card.ability.extra.last_left_joker or "nil").." | "..G.jokers.cards[i-1].sort_id)
+                            --printcard.ability.extra)
                             Blockbuster.manipulate_value(G.jokers.cards[i-1],source_id.."_left",2) --Manip current left joker
-                            print((card.ability.extra.last_left_joker or "nil").." | "..G.jokers.cards[i-1].sort_id)
-                            print(card.ability.extra)
+                            --print(card.ability.extra.last_left_joker or "nil").." | "..G.jokers.cards[i-1].sort_id)
+                            --printcard.ability.extra)
                         end
                     elseif card.ability.extra.last_left_joker then --If there's no joker to the left, and there is a last known left joker
-                        print("--- NONE LEFT ---")
+                        --print"--- NONE LEFT ---")
                         local left_joker = HODGE.joker_from_sort_id(card.ability.extra.last_left_joker)
                         if left_joker then
-                            print("Reset "..left_joker.ability.name)
+                            --print"Reset "..left_joker.ability.name)
                             Blockbuster.manipulate_value(left_joker,source_id.."_left",1) --Reset last known left joker
                         end
                         card.ability.extra.last_left_joker = nil --Clear last known left joker
@@ -56,23 +56,23 @@ SMODS.Joker {
 
                     if G.jokers.cards[i+1] then --If there's a joker to the right
                         if G.jokers.cards[i+1] ~= HODGE.joker_from_sort_id(card.ability.extra.last_right_joker) then --If it isn't the last known joker to the right
-                            print("--- RIGHT ---")
-                            print(source_id.."_right")
+                            --print"--- RIGHT ---")
+                            --printsource_id.."_right")
                             local right_joker = HODGE.joker_from_sort_id(card.ability.extra.last_right_joker)
                             if right_joker ~= nil then --If there's a last known right joker
-                                print("Reset "..right_joker.ability.name)
+                                --print"Reset "..right_joker.ability.name)
                                 Blockbuster.manipulate_value(right_joker,source_id.."_right",1) --Reset last known right joker
                             end
-                            print("Multiply "..G.jokers.cards[i+1].ability.name.." "..G.jokers.cards[i+1].sort_id)
+                            --print"Multiply "..G.jokers.cards[i+1].ability.name.." "..G.jokers.cards[i+1].sort_id)
                             card.ability.extra.last_right_joker = G.jokers.cards[i+1].sort_id --Update last known right joker to current right joker
                             Blockbuster.manipulate_value(G.jokers.cards[i+1],source_id.."_right",2) --Manip current right joker
-                            print(card.ability.extra.last_right_joker)
+                            --printcard.ability.extra.last_right_joker)
                         end
                     elseif card.ability.extra.last_right_joker then --If there's no joker to the right, and there is a last known right joker
-                        print("--- NONE RIGHT ---")
+                        --print"--- NONE RIGHT ---")
                         local right_joker = HODGE.joker_from_sort_id(card.ability.extra.last_right_joker)
                         if right_joker then
-                            print("Reset "..right_joker.ability.name)
+                            --print"Reset "..right_joker.ability.name)
                             Blockbuster.manipulate_value(right_joker,source_id.."_right",1) --Reset last known right joker
                         end
                         card.ability.extra.last_right_joker = nil --Clear last known right joker
@@ -94,8 +94,8 @@ SMODS.Joker {
             local source_id = "hodge_djungelskog_"..card.sort_id
             local left_joker = HODGE.joker_from_sort_id(card.ability.extra.last_left_joker)
             local right_joker = HODGE.joker_from_sort_id(card.ability.extra.last_right_joker)
-            Blockbuster.manipulate_value(left_joker,source_id,1)
-            Blockbuster.manipulate_value(right_joker,source_id,1)
+            Blockbuster.manipulate_value(left_joker,source_id.."_left",1)
+            Blockbuster.manipulate_value(right_joker,source_id.."_right",1)
             card.ability.extra.last_left_joker = nil
             card.ability.extra.last_right_joker = nil
         end
