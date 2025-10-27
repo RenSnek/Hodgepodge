@@ -230,6 +230,15 @@ HODGE.first_card_merge_down = function(cards,merge) -- Get first card, with comp
     end
 end
 
+HODGE.joker_from_sort_id = function(id)
+    for index,joker in pairs(G.jokers.cards) do
+        if joker.sort_id == id then
+            return joker
+        end
+    end
+    return nil
+end
+
 --  HODGE.bias_shuffle(G.deck.cards,
 --      [{
 --          match = function(item) return HODGE.table_contains(HODGE.elements_of_harmony,item.seal) end,
