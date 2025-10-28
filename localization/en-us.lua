@@ -223,10 +223,20 @@ return {
 			},
 		},
 		["perk"] = {
+			["c_hodge_drain"] = {
+				["name"] = "drain",
+				["text"] = {
+					"Reduce blind by {V:1}#1#{C:inactive}/{V:2}#2#{C:inactive}/{V:3}#3#{}",
+					"{V:4}Level 2: {V:5}+#4#{V:6} Hand this round",
+					"{V:7}Level 3: {V:8}Remove all debuffs",
+					"{C:inactive}(Level {C:attention}#5#{C:inactive}/{C:inactive}#6#){}",
+				},
+			},
 			["c_hodge_crumb"] = {
 				["name"] = "crumb",
 				["text"] = {
-					"{C:attention}+#1#{} hand size",
+					"{V:1}#1#{C:inactive}/{V:2}#2#{C:inactive}/{V:3}#3#{} hand size",
+					"{C:inactive}(Level {C:attention}#4#{C:inactive}/{C:inactive}#5#){}",
 				},
 			},
 		},
@@ -387,6 +397,15 @@ return {
 					"This card uses",
 					"Hodgepodge",
 					"Value Manipulation"
+				}
+			},
+
+			["hodge_tooltip_perklevels"] = {
+				["name"] = "Perk Levels",
+				["text"] = {
+					"{C:attention}Perks{} may appear multiple times",
+					"Owned perks of the same type",
+					"{C:attention}merge{} and combine their {C:attention}levels{}"
 				}
 			}
 		},

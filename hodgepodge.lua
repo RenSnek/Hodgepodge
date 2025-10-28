@@ -44,14 +44,16 @@ Blockbuster.ValueManipulation.CompatStandard {
             "chip_gain_bonus",
             "unrounded_sell_value",
             "rank",
-            "remaining"
+            "remaining",
+            "perk_level",
+            "max_level"
         },
         ends_on = { --Variable prefixes that won't get manipulated
             "_loss", --Anything ending in _loss won't get manipulated
             "_neg", --if its bad dont manipulate it
             "_static", --if i specifically specify i want it to not change lol
             "_rank",
-            "_count"
+            "_count",
         },
         starts_with = {
             "scaling_",
@@ -65,7 +67,7 @@ Blockbuster.ValueManipulation.CompatStandard {
 
         },
         ends_on = {
-            
+            "_int"
         },
         starts_with = {
             "hands",
