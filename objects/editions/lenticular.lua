@@ -31,7 +31,7 @@ SMODS.Edition {
             image = nil,
         }
     },
-    sound = {sound = "hodge_spawn_lenticular", per = 1, vol = 0.6},
+    --sound = {sound = "hodge_spawn_lenticular", per = 1, vol = 0.6},
     in_shop = true,
     weight = 10,
     get_weight = function(self)
