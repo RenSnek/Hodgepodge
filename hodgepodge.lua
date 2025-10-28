@@ -605,16 +605,16 @@ HODGE.load_script("objects/jokers/mlp/amber.lua")
 HODGE.load_script("objects/jokers/mlp/moonrock.lua")
 
 HODGE.load_script("objects/jokers/mlp/rainbowdash.lua")
-HODGE.load_script("objects/jokers/mlp/pinkiepie.lua")
-HODGE.load_script("objects/jokers/mlp/fluttershy.lua")
 HODGE.load_script("objects/jokers/mlp/rarity.lua")
+HODGE.load_script("objects/jokers/mlp/pinkiepie.lua")
 HODGE.load_script("objects/jokers/mlp/applejack.lua")
+HODGE.load_script("objects/jokers/mlp/fluttershy.lua")
 
 HODGE.load_script("objects/jokers/mlp/rainbowfactory.lua")
-HODGE.load_script("objects/jokers/mlp/cupcakes.lua")
-HODGE.load_script("objects/jokers/mlp/butterflies.lua")
 HODGE.load_script("objects/jokers/mlp/littlemissrarity.lua")
+HODGE.load_script("objects/jokers/mlp/cupcakes.lua")
 HODGE.load_script("objects/jokers/mlp/applesleepexperiment.lua")
+HODGE.load_script("objects/jokers/mlp/butterflies.lua")
 
 -- Page 4 - Legendaries
 HODGE.load_script("objects/jokers/misc/lumi.lua")
