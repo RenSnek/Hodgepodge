@@ -148,19 +148,10 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     if (uv.x > uv.x * 2){
         uv = lenticular;
     }
-
-    // pixelColor.a = min(pixelColor.a,0.75+(pixelColor.g*0.15));
-    // pixelColor.r = pixelColor.r * 0.9;
-    // pixelColor.g = pixelColor.g;
-    // pixelColor.b = pixelColor.b * 0.6;
     
     if (transparent) {
         pixelColor.a = 0;
     }
-
-    // pixelColor.r = lenticular.x / 1.5;
-    // pixelColor.g = lenticular.x / 1.5;
-    // pixelColor.b = lenticular.x / 1.5;
 
     if (mod(card_pixel_coords.x, 5) <= (tilt+0.1)*5) {
         pixelColor.rgb = Texel(image, uv).rgb;
