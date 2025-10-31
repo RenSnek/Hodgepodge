@@ -380,6 +380,20 @@ SMODS.Sound {
     path = "Poison.ogg"
 }
 
+-- SMODS.Sound {
+--     key = "music_menu",
+--     path = "mus_trailer.ogg",
+--     pitch = 1,
+--     sync = false,
+--     select_music_track = function(self)
+--         if G.STATE == G.STATES.MENU then
+--             return 999
+--         else
+--             return false
+--         end
+--     end
+-- }
+
 ---------------------------
 ----- Texture Atlases -----
 ---------------------------
