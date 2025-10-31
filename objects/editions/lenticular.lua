@@ -10,7 +10,7 @@ SMODS.Shader {
 
 HODGE.lenticular_images = {}
 HODGE.lenticular_image_keys = {}
-for i = 1,12 do
+for i = 1,13 do
     HODGE.lenticular_images[string.format("img_%02d", i)] = HODGE.load_custom_image(string.format("lenticular/%02d.png", i))
     table.insert(HODGE.lenticular_image_keys,string.format("img_%02d", i))
 end
@@ -76,6 +76,7 @@ SMODS.Edition {
             G.SHADERS["hodge_lenticular"]:send("image",HODGE.lenticular_images.img_09)
         end
         card.children.center:draw_shader("hodge_lenticular", nil,card.ARGS.send_to_shader)
+        if card.children.front then card.children.front:draw_shader("hodge_lenticular", nil,card.ARGS.send_to_shader) end
     end,
 
     on_apply = function(card)
