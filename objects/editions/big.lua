@@ -34,7 +34,7 @@ SMODS.Edition {
         end
     end,
     config = {
-        card_limit = -1
+        extra_slots_used = 1
     },
     sound = {sound = "hodge_spawn_big", per = 1, vol = 0.6},
     in_shop = true,
