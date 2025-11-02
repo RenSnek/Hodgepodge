@@ -53,7 +53,7 @@ SMODS.Edition {
                 mult = mult_diff,
                 message = "Balance!",
                 colour = G.C.PURPLE,
-                remove_default_message = false
+                remove_default_message = true
             }
         end
     end,

@@ -119,8 +119,7 @@ SMODS.Edition {
             elseif value < 1 then
                 sound = "hodge_trigger_slime_bad"
             end
-            print(sound)
-            return {x_mult = value, sound = sound, volume = 1.8, message = "X"..value.." Mult", remove_default_message = false, colour = G.C.DARK_EDITION}
+            return {x_mult = value, sound = sound, volume = 1.8, message = "X"..value.." Mult", remove_default_message = true, colour = G.C.DARK_EDITION}
         end
     end
 }
