@@ -573,6 +573,9 @@ HODGE.load_script("objects/suits/ladders.lua")
 HODGE.load_script("objects/suits/suns.lua")
 HODGE.load_script("objects/suits/moons.lua")
 
+----- Poker Hands ------
+HODGE.load_script("objects/hands/snap.lua")
+
 ------ Jokers ------
 -- Page 1 - Misc
 HODGE.load_script("objects/jokers/misc/placeholder.lua")

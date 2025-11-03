@@ -115,6 +115,14 @@ return {
 		["challenge_names"] = {
 			["c_hodge_battleroyale"] = "Battle Royale",
 			["c_hodge_timeline"] = "Timeline"
+		},
+		["poker_hand_descriptions"] = {
+			["hodge_snap"] = {
+				"2 cards with the same rank, suit and enhancement"
+			}
+		},
+		["poker_hands"] = {
+			["hodge_snap"] = "Snap"
 		}
 	},
 	["descriptions"] = {
