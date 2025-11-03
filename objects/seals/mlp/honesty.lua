@@ -24,17 +24,11 @@ SMODS.Seal {
         -- print(card.ability.seal)
         -- print("self.ability:")
         -- print(self.ability)
-        return {vars = ((card and card.ability and card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.card_elements) and {
-            card.ability.seal.extra.card_elements[1], card.ability.seal.extra.card_positions[1],
-            card.ability.seal.extra.card_elements[2], card.ability.seal.extra.card_positions[2],
-            card.ability.seal.extra.card_elements[3], card.ability.seal.extra.card_positions[3]
-        }) or {"?","?","?","?","?","?"}}
-    end,
-    calculate = function(self, card, context)
-        if context.cardarea == G.hand then
-            card.ability.seal.extra.card_elements = {}
-            card.ability.seal.extra.card_positions = {}
 
+        local card_elements = {}
+        local card_positions = {}
+
+        if card.area == G.hand then
             local element_names = {
                 hodge_honest = "Honesty",
                 hodge_laughter = "Laughter",
@@ -49,21 +43,68 @@ SMODS.Seal {
                 table.insert(check_deck,1,v)
             end
             for i,v in ipairs(check_deck) do
-                if HODGE.table_true_size(card.ability.seal.extra.card_elements) < 3 then
+                if HODGE.table_true_size(card_elements) < 3 then
                     if HODGE.table_contains(HODGE.elements_of_harmony,v.seal) then
-                        table.insert(card.ability.seal.extra.card_elements,element_names[v.seal])
-                        table.insert(card.ability.seal.extra.card_positions,tostring(i))
+                        table.insert(card_elements,element_names[v.seal])
+                        table.insert(card_positions,tostring(i))
                     end
                 end
             end
-            while HODGE.table_true_size(card.ability.seal.extra.card_elements) < 3 do
-                table.insert(card.ability.seal.extra.card_elements,"?")
-                table.insert(card.ability.seal.extra.card_positions,"?")
+            while HODGE.table_true_size(card_elements) < 3 do
+                table.insert(card_elements,"?")
+                table.insert(card_positions,"?")
             end
         else
-            card.ability.seal.extra.card_elements = {"?","?","?"}
-            card.ability.seal.extra.card_positions = {"?","?","?"}
+            card_elements = {"?","?","?"}
+            card_positions = {"?","?","?"}
         end
+
+        return {vars = {
+            card_elements[1],card_positions[1],
+            card_elements[2],card_positions[2],
+            card_elements[3],card_positions[3],
+        }}
+
+        -- return {vars = ((card and card.ability and card.ability.seal and card.ability.seal.extra and card.ability.seal.extra.card_elements) and {
+        --     card.ability.seal.extra.card_elements[1], card.ability.seal.extra.card_positions[1],
+        --     card.ability.seal.extra.card_elements[2], card.ability.seal.extra.card_positions[2],
+        --     card.ability.seal.extra.card_elements[3], card.ability.seal.extra.card_positions[3]
+        -- }) or {"?","?","?","?","?","?"}}
+    end,
+    calculate = function(self, card, context)
+        -- if context.cardarea == G.hand then
+        --     card.ability.seal.extra.card_elements = {}
+        --     card.ability.seal.extra.card_positions = {}
+
+        --     local element_names = {
+        --         hodge_honest = "Honesty",
+        --         hodge_laughter = "Laughter",
+        --         hodge_magic = "Magic",
+        --         hodge_loyalty = "Loyalty",
+        --         hodge_generosity = "Generosity",
+        --         hodge_kindness = "Kindness"
+        --     }
+            
+        --     local check_deck = {}
+        --     for k,v in ipairs(G.deck.cards) do -- Reverse the deck
+        --         table.insert(check_deck,1,v)
+        --     end
+        --     for i,v in ipairs(check_deck) do
+        --         if HODGE.table_true_size(card.ability.seal.extra.card_elements) < 3 then
+        --             if HODGE.table_contains(HODGE.elements_of_harmony,v.seal) then
+        --                 table.insert(card.ability.seal.extra.card_elements,element_names[v.seal])
+        --                 table.insert(card.ability.seal.extra.card_positions,tostring(i))
+        --             end
+        --         end
+        --     end
+        --     while HODGE.table_true_size(card.ability.seal.extra.card_elements) < 3 do
+        --         table.insert(card.ability.seal.extra.card_elements,"?")
+        --         table.insert(card.ability.seal.extra.card_positions,"?")
+        --     end
+        -- else
+        --     card.ability.seal.extra.card_elements = {"?","?","?"}
+        --     card.ability.seal.extra.card_positions = {"?","?","?"}
+        -- end
     end,
     atlas = "seal_atlas",
     pos = {x=2,y=1}
