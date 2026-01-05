@@ -49,5 +49,6 @@ SMODS.Joker {
     end,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
+        badges[#badges+1] = HODGE.badge('credit','jorse')
     end
 }
