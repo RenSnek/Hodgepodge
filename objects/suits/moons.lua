@@ -16,7 +16,8 @@ SMODS.Suit {
     in_pool = function(self,args)
         if G.GAME.selected_back then
             local moon_decks = {"Friendship Deck"}
-            return HODGE.table_contains(moon_decks,G.GAME.selected_back.name)
+            local moon_sleeves = {"sleeve_hodge_friendship"}
+            return HODGE.table_contains(moon_decks,G.GAME.selected_back.name) or HODGE.table_contains(moon_sleeves,G.GAME.selected_sleeve)
         else
             return true
         end

@@ -180,6 +180,21 @@ return {
 					"by {C:hodge_snake}Snakes{} and {C:hodge_ladders}Ladders{}",
 				},
 			},
+			["sleeve_hodge_friendship"] = {
+				["name"] = "Friendship Sleeve",
+				["text"] = {
+					"Includes {C:hodge_suns}Sun{} and {C:hodge_moons}Moon{} suits",
+					"Includes 1 of each",
+					"{C:attention}Element of Harmony{}",
+				},
+			},
+			["sleeve_hodge_friendship_alt"] = {
+				["name"] = "Friendship Sleeve",
+				["text"] = {
+					"All {C:hodge_suns}Suns{} and {C:hodge_ladders}Moons{} have",
+					"{C:attention}Elements of Harmony{}"
+				},
+			},
 		},
 		["power"] = {
 			["c_hodge_chaos"] = {
