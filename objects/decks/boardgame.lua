@@ -50,9 +50,7 @@ if CardSleeves then
             if self.get_current_deck_key() == "b_hodge_boardgame" then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        print("a")
                         for k,v in pairs(G.playing_cards) do
-                            print(v.base.suit)
                             if (v.base.suit == 'Clubs' or v.base.suit == 'Spades') and pseudorandom('boardgame_sleeve') <= 0.25 then
                                 v:change_suit('hodge_snake')
                             end

@@ -176,7 +176,8 @@ return {
 			["sleeve_hodge_boardgame_alt"] = {
 				["name"] = "Board Game Sleeve",
 				["text"] = {
-					"Base cards may be replaced by {C:hodge_snake}Snakes{} and {C:hodge_ladders}Ladders{}",
+					"Base cards may be replaced",
+					"by {C:hodge_snake}Snakes{} and {C:hodge_ladders}Ladders{}",
 				},
 			},
 		},
