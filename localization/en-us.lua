@@ -165,6 +165,21 @@ return {
 				},
 			},
 		},
+		["Sleeve"] = {
+			["sleeve_hodge_boardgame"] = {
+				["name"] = "Board Game Sleeve",
+				["text"] = {
+					"Includes {C:hodge_snake}Snake{} and {C:hodge_ladders}Ladder{} suits",
+					"Start with {C:attention,T:j_oops}Oops! All 6s{}",
+				},
+			},
+			["sleeve_hodge_boardgame_alt"] = {
+				["name"] = "Board Game Sleeve",
+				["text"] = {
+					"Base cards may be replaced by {C:hodge_snake}Snakes{} and {C:hodge_ladders}Ladders{}",
+				},
+			},
+		},
 		["power"] = {
 			["c_hodge_chaos"] = {
 				["name"] = "Chaos",
