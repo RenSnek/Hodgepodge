@@ -175,7 +175,7 @@ return {
 			["sleeve_hodge_jimbo_alt"] = {
 				["name"] = "JIMBO SLEEVE",
 				["text"] = {
-					"{X:mult,C:mult}X4{} Mult",
+					"{X:mult,C:white}X4{} Mult",
 				},
 			},
 			["sleeve_hodge_condemned"] = {
