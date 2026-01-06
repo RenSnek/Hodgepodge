@@ -566,7 +566,7 @@ HODGE.load_script("objects/seals/mlp/laughter.lua")
 HODGE.load_script("objects/seals/mlp/magic.lua")
 
 ------ Decks ------
-HODGE.load_script("objects/decks/jumbo.lua")
+-- HODGE.load_script("objects/decks/jumbo.lua") --Big edition does not correctly affect playing cards.
 HODGE.load_script("objects/decks/jimbo.lua")
 HODGE.load_script("objects/decks/condemned.lua")
 HODGE.load_script("objects/decks/boardgame.lua")
