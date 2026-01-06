@@ -166,6 +166,32 @@ return {
 			},
 		},
 		["Sleeve"] = {
+			["sleeve_hodge_jimbo"] = {
+				["name"] = "Jimbo Sleeve",
+				["text"] = {
+					"{C:mult}+4{} Mult",
+				},
+			},
+			["sleeve_hodge_jimbo_alt"] = {
+				["name"] = "JIMBO SLEEVE",
+				["text"] = {
+					"{X:mult,C:mult}X4{} Mult",
+				},
+			},
+			["sleeve_hodge_condemned"] = {
+				["name"] = "Condemned Sleeve",
+				["text"] = {
+					"Random cards are missing",
+					"Random cards are {C:attention,T:m_hodge_asbestos}Asbestos{}",
+					"Random cards are {C:attention,T:m_hodge_waterdamage}Water Damaged{}",
+				},
+			},
+			["sleeve_hodge_condemned_alt"] = {
+				["name"] = "Condemned Sleeve",
+				["text"] = {
+					"Start with {T:j_hodge_shooketh,C:attention}Shooketh{}"
+				},
+			},
 			["sleeve_hodge_boardgame"] = {
 				["name"] = "Board Game Sleeve",
 				["text"] = {

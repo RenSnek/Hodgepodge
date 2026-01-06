@@ -46,7 +46,6 @@ if CardSleeves then
         end,
         config = {alt = false},
         apply = function(self,sleeve)
-            print(self.get_current_deck_key())
             if self.get_current_deck_key() == "b_hodge_boardgame" then
                 G.E_MANAGER:add_event(Event({
                     func = function()
