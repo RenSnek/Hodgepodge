@@ -79,5 +79,42 @@ SMODS.Consumable {
         update_hand_text({sound = 'button', volume = 0.7, pitch = 0.8, delay = 0.3}, {handname=second_lowest_hand,chips = G.GAME.hands[second_lowest_hand].chips, mult = G.GAME.hands[second_lowest_hand].mult, level=G.GAME.hands[second_lowest_hand].level})
         level_up_hand(card, second_lowest_hand, false, card.ability.extra.upgrade_levels[2])
         update_hand_text({sound = 'button', volume = 0.7, pitch = 1.1, delay = 0}, {mult = 0, chips = 0, handname = '', level = ''})
+    end,
+    set_card_type_badge = function(self, card, badges)
+        badges[#badges + 1] = create_badge(localize('k_planet_q'),
+            get_type_colour(card.config.center or card.config, card), SMODS.ConsumableTypes.Planet.text_colour,
+            1.2)
+    end
+}
+
+SMODS.Consumable {
+    key = "twinplanets",
+    set = "Planet",
+    atlas = "tarot_atlas", pos = {x=1,y=0},
+    -- loc_txt = {
+    --     name = "Avalon",
+    --     text = {
+    --         "Upgrade {C:attention}least used{}",
+    --         "poker hand by {C:attention}#1# levels{}",
+    --         "and {C:attention}2nd least used{}",
+    --         "poker hand by {C:attention}#2# levels{}",
+    --     }
+    -- },
+    loc_vars = function (self,info_queue,card)
+        return {vars = {
+            G.GAME.hands[card.ability.hand_type].level,
+            localize(card.ability.hand_type,'poker_hands'),
+            G.GAME.hands[card.ability.hand_type].l_mult,
+            G.GAME.hands[card.ability.hand_type].l_chips,
+            colours = { (G.GAME.hands[card.ability.hand_type].level == 1 and G.C.UI.TEXT_DARK or G.C.HAND_LEVELS[math.min(7,G.GAME.hands[card.ability.hand_type].level)]) }
+        }}
+    end,
+    config = {
+        hand_type = 'hodge_snap'
+    },
+    set_card_type_badge = function(self, card, badges)
+        badges[#badges + 1] = create_badge(localize('k_exoplanets'),
+            get_type_colour(card.config.center or card.config, card), SMODS.ConsumableTypes.Planet.text_colour,
+            1.2)
     end
 }

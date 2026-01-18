@@ -1,7 +1,7 @@
 SMODS.Consumable {
     key = "ouroboros",
     set = "Spectral",
-    atlas = "tarot_atlas", pos = {x=1,y=0},
+    atlas = "tarot_atlas", pos = {x=0,y=1},
     config = {
         max_highlighted = 1,
         extra = "hodge_revive"
@@ -34,7 +34,7 @@ SMODS.Consumable {
     key = "coven",
     set = "Spectral",
     atlas = "tarot_atlas",
-    pos = {x=2,y=0},
+    pos = {x=1,y=1},
     cost = 3,
     config = {
         max_highlighted = 1,

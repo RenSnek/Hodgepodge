@@ -36,6 +36,8 @@ return {
 			["hodge_moons"] = "Moons",
 		},
 		["dictionary"] = {
+			["k_exoplanet"] = "Exoplanet",
+			["k_exoplanets"] = "Exoplanets",
 			-- Categories
 			["k_badge_misc"] = "Misc",
 			["k_badge_joke"] = "Joke",
@@ -1021,6 +1023,15 @@ return {
 					"poker hand by {C:attention}#1# levels{}",
 					"and {C:attention}2nd least used{}",
 					"poker hand by {C:attention}#2# levels{}",
+				},
+			},
+			["c_hodge_twinplanets"] = {
+				["name"] = "Phobetor & Poltergeist",
+				["text"] = {
+					"({V:1}lvl.#1#{}) Level up",
+					"{C:attention}#2#",
+					"{C:mult}+#3#{} Mult and",
+					"{C:chips}+#4#{} chips"
 				},
 			},
 		},
