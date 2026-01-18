@@ -18,9 +18,9 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     calculate = function(self,card,context)
-        if context.before then
+        if context.press_play then
             --print(context.full_hand)
-            for k,playing_card in pairs(context.full_hand) do
+            for k,playing_card in pairs(G.hand.highlighted) do
                 --print(playing_card.debuff)
                 if playing_card.debuff then
                     playing_card.hodge_unscored = true

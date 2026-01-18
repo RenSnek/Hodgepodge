@@ -19,10 +19,13 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
         if context.selling_card and context.cardarea == G.jokers and not context.selling_self then
-            card.ability.x_mult = card.ability.x_mult + (context.card.sell_cost * card.ability.extra.value_mult)
-            return {
-                message = "+"..(context.card.sell_cost * card.ability.extra.value_mult).."X"
-            }
+            if context.card ~= card then
+                card.ability.x_mult = card.ability.x_mult + (context.card.sell_cost * card.ability.extra.value_mult)
+                return {
+                    dollars = -context.card.sell_cost,
+                    message = "+"..(context.card.sell_cost * card.ability.extra.value_mult).."X"
+                }
+            end
         end
     end,
     blueprint_compat = true,
