@@ -3,7 +3,7 @@ SMODS.Back {
     key = "boardgame",
     atlas = "decks_atlas",
     pos = {x=3,y=0},
-    config = {},
+    config = {easy_spectra = true},
     -- loc_txt = {
     --     name = "Snake Deck",
     --     text = {
@@ -44,7 +44,7 @@ if CardSleeves then
             end
             return {key = key, vars = vars}
         end,
-        config = {alt = false},
+        config = {alt = false, easy_spectra = true},
         apply = function(self,sleeve)
             if self.get_current_deck_key() == "b_hodge_boardgame" then
                 G.E_MANAGER:add_event(Event({
