@@ -53,13 +53,14 @@ return {
 			["k_badge_pumpkin"] = "Art: Pumpkin man",
 			
 			["b_power_cards"] = "Power Cards",
+			["k_power"] = "Power Card",
 			["k_booster_group_p_hodge_power_booster_mega"] = {
 				"Power Cards",
 			},
 			["k_booster_group_p_hodge_power_booster_1"] = {
 				"Power Cards",
 			},
-			["k_power"] = "Power Card",
+			
 			["k_booster_group_p_hodge_power_booster_jumbo"] = {
 				"Power Cards",
 			},
@@ -70,6 +71,9 @@ return {
 
 			["b_perk_cards"] = "Perk Cards",
 			["k_perk"] = "Perk Card",
+
+			["b_mystery_cards"] = "Mystery Cards",
+			["k_mystery"] = "Mystery Card",
 		},
 		["labels"] = {
 			["hodge_honesty_seal"]    = "Element of Harmony",
@@ -299,6 +303,16 @@ return {
 					"{C:inactive}(Level {C:attention}#5#{C:inactive}/{C:inactive}#6#){}",
 				},
 			},
+			["c_hodge_bellow"] = {
+				["name"] = "bellow",
+				["text"] = {
+					"{V:1}#1#{C:inactive}/{V:2}#2#{C:inactive}/{V:3}#3#{} hand size, reduces",
+					"by {C:attention}-1{} every hand",
+					"{V:4}Level 2: {V:5}+#4#{V:6} Hand this round",
+					"{V:7}Level 3: {V:8}Reduce blind by {V:9}#5#%",
+					"{C:inactive}(Level {C:attention}#6#{C:inactive}/{C:inactive}#7#){}",
+				},
+			},
 			["c_hodge_crumb"] = {
 				["name"] = "crumb",
 				["text"] = {
@@ -306,6 +320,47 @@ return {
 					"{C:inactive}(Level {C:attention}#4#{C:inactive}/{C:inactive}#5#){}",
 				},
 			},
+		},
+		["mystery"] = {
+			["c_hodge_loof"] = {
+				["name"] = "The Loof",
+				["text"] = {
+					"{C:legendary}iunno"
+				}
+			},
+			["c_hodge_highestspires"] = {
+				["name"] = "Highest Spires",
+				["text"] = {
+					"Converts up to",
+					"{C:attention}#1#{} selected cards",
+					"to {V:1}#2#{}"
+				}
+			},
+			["c_hodge_mrseeps"] = {
+				["name"] = "Mr. Seeps",
+				["text"] = {
+					"Converts up to",
+					"{C:attention}#1#{} selected cards",
+					"to {V:1}#2#{}"
+				}
+			},
+
+			["c_hodge_lived"] = {
+				["name"] = "Lived",
+				["text"] = {
+					"Converts up to",
+					"{C:attention}#1#{} selected cards",
+					"to {V:1}#2#{}"
+				}
+			},
+			["c_hodge_werot"] = {
+				["name"] = "We Rot",
+				["text"] = {
+					"Converts up to",
+					"{C:attention}#1#{} selected cards",
+					"to {V:1}#2#{}"
+				}
+			}
 		},
 		["Blind"] = {
 			-- ["bl_wheel"] = {

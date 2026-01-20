@@ -433,6 +433,13 @@ SMODS.Atlas { --stupid game wont let me have square shaped undiscoveredsprite so
 }
 
 SMODS.Atlas {
+    key = "anagrarot_atlas",
+    path = "anagrarots.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Atlas {
     -- atlas_table = 'ANIMATION_ATLAS',
     key = "anim_power_atlas",
     path = "animated_powers.png",
@@ -538,6 +545,7 @@ HODGE.load_script("hooks/general.lua")
 -- Custom Types
 HODGE.load_script("objects/consumables/power.lua")
 HODGE.load_script("objects/consumables/perk.lua")
+HODGE.load_script("objects/consumables/anagrarots.lua")
 -- Vanilla Types
 HODGE.load_script("objects/consumables/planet.lua")
 HODGE.load_script("objects/consumables/spectral.lua")
