@@ -46,7 +46,8 @@ Blockbuster.ValueManipulation.CompatStandard {
             "rank",
             "remaining",
             "perk_level",
-            "max_level"
+            "max_level",
+            "triggers_left"
         },
         ends_on = { --Variable prefixes that won't get manipulated
             "_loss", --Anything ending in _loss won't get manipulated
