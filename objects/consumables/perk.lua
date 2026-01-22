@@ -24,6 +24,8 @@ SMODS.ConsumableType {
     primary_colour = HEX("FFC700"),
     secondary_colour = HEX("000000"),
     cards = {
+        ["drain"] = true,
+        ["bellow"] = true,
         ["crumb"] = true,
     },
     select_card = "consumeables"
@@ -38,7 +40,7 @@ SMODS.UndiscoveredSprite {
 
 local is_eternal_hook = SMODS.is_eternal
 function SMODS.is_eternal(card, trigger)
-    if card and card.ability and card.ability.extra and card.ability.extra.activated and card.ability.extra.triggers_left > 0 then
+    if card.ability and type(card.ability.extra) == "table" and card.ability.extra.activated and card.ability.extra.triggers_left > 0 then
         return true
     end
     return is_eternal_hook(card,trigger)
@@ -423,24 +425,28 @@ SMODS.Consumable {
 
 --- BOOSTERS ---
 
--- SMODS.Booster {
---     key = "power_booster_1",
---     atlas = "booster_atlas",
---     pos = {x=0,y=0},
---     kind = "power",
---     config = {extra = 2, choose = 1},
---     weight = 0.5,
---     draw_hand = true,
---     group_key = "k_hodge_power_booster",
---     create_card = function(self,card,i)
---         return {
---             set = "power",
---             key_append = "power_booster",
---             skip_materialize = true,
---             area = G.pack_cards
---         }
---     end
--- }
+SMODS.Booster {
+    key = "perk_booster_1",
+    atlas = "booster_atlas",
+    pos = {x=0,y=2},
+    kind = "power",
+    config = {extra = 3, choose = 1},
+    weight = 0.75,
+    draw_hand = false,
+    group_key = "k_hodge_perk_booster",
+    create_card = function(self,card,i)
+        return {
+            set = "perk",
+            key_append = "perk_booster",
+            skip_materialize = true,
+            area = G.pack_cards
+        }
+    end,
+    select_card = 'consumeables',
+    in_pool = function(self,args)
+        return {allow_duplicates = true}
+    end
+}
 
 -- SMODS.Booster {
 --     key = "power_booster_2",
@@ -461,24 +467,28 @@ SMODS.Consumable {
 --     end
 -- }
 
--- SMODS.Booster {
---     key = "power_booster_jumbo",
---     atlas = "booster_atlas",
---     pos = {x=2,y=0},
---     kind = "power",
---     config = {extra = 4, choose = 1},
---     weight = 0.5,
---     draw_hand = true,
---     group_key = "k_hodge_power_booster",
---     create_card = function(self,card,i)
---         return {
---             set = "power",
---             key_append = "power_booster",
---             skip_materialize = true,
---             area = G.pack_cards
---         }
---     end
--- }
+SMODS.Booster {
+    key = "perk_booster_jumbo",
+    atlas = "booster_atlas",
+    pos = {x=1,y=2},
+    kind = "perk",
+    config = {extra = 3, choose = 2},
+    weight = 0.75,
+    draw_hand = false,
+    group_key = "k_hodge_perk_booster",
+    create_card = function(self,card,i)
+        return {
+            set = "perk",
+            key_append = "perk_booster",
+            skip_materialize = true,
+            area = G.pack_cards
+        }
+    end,
+    select_card = 'consumeables',
+    in_pool = function(self,args)
+        return {allow_duplicates = true}
+    end
+}
 
 -- SMODS.Booster {
 --     key = "power_booster_mega",

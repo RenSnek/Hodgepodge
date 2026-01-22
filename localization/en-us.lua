@@ -72,8 +72,36 @@ return {
 			["b_perk_cards"] = "Perk Cards",
 			["k_perk"] = "Perk Card",
 
+			["k_hodge_perk_booster"] = "Perk Star",
+			["k_booster_group_p_hodge_perk_booster_mega"] = {
+				"Perk Cards",
+			},
+			["k_booster_group_p_hodge_perk_booster_1"] = {
+				"Perk Cards",
+			},
+			["k_booster_group_p_hodge_perk_booster_jumbo"] = {
+				"Perk Cards",
+			},
+			["k_booster_group_p_hodge_perk_booster_2"] = {
+				"Perk Cards",
+			},
+
 			["b_mystery_cards"] = "Mystery Cards",
 			["k_mystery"] = "Mystery Card",
+
+			["k_hodge_mystery_booster"] = "Mystery Pack",
+			["k_booster_group_p_hodge_mystery_booster_mega"] = {
+				"Mystery Cards",
+			},
+			["k_booster_group_p_hodge_mystery_booster_1"] = {
+				"Mystery Cards",
+			},
+			["k_booster_group_p_hodge_mystery_booster_jumbo"] = {
+				"Mystery Cards",
+			},
+			["k_booster_group_p_hodge_mystery_booster_2"] = {
+				"Mystery Cards",
+			},
 		},
 		["labels"] = {
 			["hodge_honesty_seal"]    = "Element of Harmony",
@@ -513,6 +541,74 @@ return {
 				},
 			},
 			
+			["p_hodge_perk_booster_1"] = {
+				["group_name"] = {
+					"Perk Cards",
+				},
+				["name"] = "Perk Star",
+				["text"] = {
+					"Choose {C:attention}1{} of up to",
+					"{C:attention}3 Perk Cards{} to",
+					"add to consumables"
+				},
+			},
+			["p_hodge_perk_booster_jumbo"] = {
+				["group_name"] = {
+					"Perk Cards",
+				},
+				["name"] = "Perk Stars",
+				["text"] = {
+					"Choose {C:attention}2{} of up to",
+					"{C:attention}3 Perk Cards{} to",
+					"add to consumables"
+				},
+			},
+
+			["p_hodge_mystery_booster_1"] = {
+				["group_name"] = {
+					"Mystery Cards",
+				},
+				["name"] = "Mystery Pack",
+				["text"] = {
+					"Choose {C:attention}1{} of up to",
+					"{C:attention}3 Mystery Cards{} to",
+					"be used immediately"
+				},
+			},
+			["p_hodge_mystery_booster_2"] = {
+				["group_name"] = {
+					"Mystery Cards",
+				},
+				["name"] = "Mystery Pack",
+				["text"] = {
+					"Choose {C:attention}1{} of up to",
+					"{C:attention}3 Mystery Cards{} to",
+					"be used immediately"
+				},
+			},
+			["p_hodge_mystery_booster_jumbo"] = {
+				["group_name"] = {
+					"Mystery Cards",
+				},
+				["name"] = "Jumbo Mystery Pack",
+				["text"] = {
+					"Choose {C:attention}1{} of up to",
+					"{C:attention}5 Mystery Cards{} to",
+					"be used immediately"
+				},
+			},
+			["p_hodge_mystery_booster_mega"] = {
+				["group_name"] = {
+					"Mystery Cards",
+				},
+				["name"] = "Mega Mystery Pack",
+				["text"] = {
+					"Choose {C:attention}2{} of up to",
+					"{C:attention}5 Mystery Cards{} to",
+					"be used immediately"
+				},
+			},
+
 			["compat_standard_hodge_default"] = {
 				["name"] = "Hodgepodge",
 				["text"] = {
