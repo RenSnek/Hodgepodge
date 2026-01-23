@@ -1026,9 +1026,9 @@ return {
 			["j_hodge_jovialmerriment"] = {
 				["name"] = "Jovial Merriment",
 				["text"] = {
-					"Gains {X:mult,C:white}X#1#{} Mult if played hand is",
+					"Earn {C:money}$#1#{} if played hand is",
 					"{C:attention}highest scoring{} hand of run",
-					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult, {C:chips}#3#{C:inactive} chips){}"
+					"{C:inactive}(Current record: {C:chips}#2#{C:inactive} chips){}"
 				},
 			},
 			["j_hodge_umbreon"] = {
@@ -1086,28 +1086,14 @@ return {
 				},
 			},
 			["j_hodge_timeloop"] = {
-				["name"] = "Day 734",
+				["name"] = "Time Looper's Diary",
 				["text"] = {
 					{
-						"If not the {C:attention}rightmost{} joker,",
-						"{C:attention}destroy{} joker to the right",
-						"and {C:attention}gain 1 charge{}.",
-						"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
-
+						"{C:dark_edition}Scoring ante{} will not increase.",
 					},
 					{
-						"After {C:attention}Boss Blind{} is defeated,",
-						"consume 1 {C:attention}charge{}, else",
-						"rewind to start of the Ante.",
-						"{C:gold}Money{}, {C:attention}Jokers{}, {C:attention}Shops{}, etc. are",
-						"included in the rewind.",
-						"{C:inactive,s:0.9}#1#{}"
-					},
-					{
-						"{C:inactive,s:0.8}I know this one isn't great{}",
-						"{C:inactive,s:0.8}but I'm too stubborn to scrap it.{}",
-						"{C:inactive,s:0.8}Will probably be reworked some day.{}",
-						"{C:inactive,s:0.8}-Ren{}"
+						"When {C:attention}Boss Blind{} is defeated,",
+						"{C:red}Destroy{} last played hand."
 					}
 				}
 			},
