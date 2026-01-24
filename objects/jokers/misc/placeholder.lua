@@ -24,7 +24,7 @@ SMODS.Joker {
                 jokers[v.rarity][#jokers[v.rarity] + 1] = v.key
             end
         end
-        print(jokers)
+        -- print(jokers)
         local rarity_weights = {
             [1] = 0.70, --Common:   70% (Vanilla: 70%)
             [2] = 0.95, --Uncommon: 25% (Vanilla: 25%)

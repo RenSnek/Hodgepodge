@@ -46,6 +46,7 @@ SMODS.Joker {
         end
     end,
     blueprint_compat = false,
+    perishable_compat = false,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
     end

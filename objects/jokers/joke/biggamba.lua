@@ -20,7 +20,7 @@ SMODS.Joker {
     blueprint_compat = true,
     calculate = function(self,card,context)
         if context.joker_main then
-            if pseudorandom("biggamba") < 0.01 then
+            if SMODS.pseudorandom_probability(card, 'biggamba', 1, 100, 'biggamba') then
                 return {
                     message = "Jackpot!",
                     chips = card.ability.extra.jackpot

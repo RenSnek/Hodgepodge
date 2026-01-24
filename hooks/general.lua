@@ -189,7 +189,7 @@ end
 
 local get_blind_amount_orig = get_blind_amount
 get_blind_amount = function(ante)
-    if G.GAME.hodge_use_scoring_ante > 0 and G.GAME.hodge_scoring_ante ~= nil then
+    if G.GAME and G.GAME.hodge_use_scoring_ante > 0 and G.GAME.hodge_scoring_ante ~= nil then
         return get_blind_amount_orig(G.GAME.hodge_scoring_ante)
     else
         return get_blind_amount_orig(ante)

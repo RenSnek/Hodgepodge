@@ -87,7 +87,7 @@ Blockbuster.ValueManipulation.CompatStandard {
         j_hodge_lowpercent = true,
         j_hodge_stopsign = true,
         j_hodge_lostcount = true,
-        ["j_hodge_big gamba"] = true, --why did i put a space in this ones name
+        j_hodge_biggamba = true,
         j_hodge_sou = true,
         j_hodge_twilightsparkle = true,
         j_hodge_rainbowdash = true,
@@ -622,7 +622,7 @@ HODGE.load_script("objects/jokers/joke/vestup.lua")
 HODGE.load_script("objects/jokers/joke/nft.lua")
 HODGE.load_script("objects/jokers/joke/stopsign.lua")
 HODGE.load_script("objects/jokers/joke/lostcount.lua")
-HODGE.load_script("objects/jokers/joke/big gamba.lua")
+HODGE.load_script("objects/jokers/joke/biggamba.lua")
 
 HODGE.load_script("objects/jokers/joke/shooketh.lua")
 HODGE.load_script("objects/jokers/joke/ppe.lua")
