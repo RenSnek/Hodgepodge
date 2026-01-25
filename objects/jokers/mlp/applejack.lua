@@ -9,10 +9,10 @@ SMODS.Joker {
                     elements = elements + 1
                 end
             end
-            if elements > (G.deck.config.true_card_limit)/2 then
+            if elements > (#G.playing_cards)/2 then
                 count = elements
             else
-                count = (G.deck.config.true_card_limit)/2
+                count = (#G.playing_cards)/2
             end
         end
         return {
