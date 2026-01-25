@@ -1279,7 +1279,35 @@ return {
 					"Create a {C:attention}perishable{}",
 					"{C:purple}Legendary{} joker"
 				}
-			}
+			},
+			["tag_hodge_power"] = {
+				["name"] = "Power Tag",
+				["text"] = {
+					"Gives a free",
+					"{C:dark_edition}Mega Power Pack{}"
+				}
+			},
+			["tag_hodge_clue"] = {
+				["name"] = "Clue Tag",
+				["text"] = {
+					"Gives a free",
+					"{C:red}Mega Mystery Pack{}"
+				}
+			},
+			["tag_hodge_star"] = {
+				["name"] = "Star Tag",
+				["text"] = {
+					"Gives a free",
+					"{C:attention}Mega Perk Pack{}"
+				}
+			},
+			["tag_hodge_clover"] = {
+				["name"] = "Clover Tag",
+				["text"] = {
+					"Doubles {C:attention}listed {C:green,E:1}probabilities{}",
+					"for one round"
+				}
+			},
 		}
 	},
 }

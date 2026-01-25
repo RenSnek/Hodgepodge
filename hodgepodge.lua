@@ -9,6 +9,25 @@ HODGE.optional_features = function()
     }
 end
 
+HODGE.calculate = function(self,context)
+    if context.mod_probability then
+        local numerator_mult = 1
+        for i = 1, #G.GAME.tags do
+            if G.GAME.tags[i].key == "tag_hodge_clover" then
+                numerator_mult = numerator_mult * 2
+            end
+        end
+        return {
+            numerator = context.numerator * numerator_mult
+        }
+    end
+    if context.end_of_round then
+        for i = 1, #G.GAME.tags do
+            local ret = G.GAME.tags[i]:apply_to_run({type = 'end_of_round'})
+        end
+    end
+end
+
 ----------------------------
 ----- GLOBAL VARIABLES -----
 ----------------------------
@@ -686,6 +705,10 @@ HODGE.load_script("objects/challenges/timeline.lua")
 
 ------ Tags ------
 HODGE.load_script("objects/tags/assist.lua")
+HODGE.load_script("objects/tags/power.lua")
+HODGE.load_script("objects/tags/clue.lua")
+HODGE.load_script("objects/tags/star.lua")
+HODGE.load_script("objects/tags/clover.lua")
 
 HODGE.load_script("collabs/mlp.lua")
 
