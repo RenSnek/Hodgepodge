@@ -561,6 +561,9 @@ SMODS.Atlas {
 ------ Hooks ------
 HODGE.load_script("hooks/general.lua")
 
+------ UI ------
+HODGE.load_script("customui.lua")
+
 ------ Consumables ------
 -- Custom Types
 HODGE.load_script("objects/consumables/power.lua")

@@ -102,6 +102,11 @@ return {
 			["k_booster_group_p_hodge_mystery_booster_2"] = {
 				"Mystery Cards",
 			},
+
+			["hodge_credits_header"] = "Credits",
+			["hodge_credits_developer"] = "Developer: ",
+			["hodge_credits_artists"] = "Artists: ",
+			["hodge_credits_thanks"] = "Special thanks: ",
 		},
 		["labels"] = {
 			["hodge_honesty_seal"]    = "Element of Harmony",
