@@ -1208,7 +1208,7 @@ return {
 				["label"] = "Asbestos",
 				["name"] = "Asbestos",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} mult while in hand",
+					"{X:mult,C:white}X#1#{} Mult while in hand",
 					"Loses {X:mult,C:white}X#2#{} per hand played",
 					"{E:2,C:mult}Can go negative{}",
 					"{E:1,C:mult}Negative values DON'T cancel out{}",
