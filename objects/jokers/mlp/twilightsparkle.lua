@@ -15,7 +15,6 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
         if context.joker_main then
-            local chosen_card = pseudorandom_element(context.scoring_hand,pseudoseed("twilightsparkle"))
             
             local eligible_sealless_cards = {}
             for k, v in pairs(context.scoring_hand) do
@@ -26,8 +25,8 @@ SMODS.Joker {
             if HODGE.table_true_size(eligible_sealless_cards) > 0 then 
                 local over = false
                 local temp_pool = eligible_sealless_cards or {}
-                local eligible_card = pseudorandom_element(temp_pool, pseudoseed("magic"))
-                local selected_element = pseudorandom_element(HODGE.elements_of_harmony, pseudoseed("magic"))
+                local eligible_card = pseudorandom_element(temp_pool, pseudoseed("twilightsparkle"))
+                local selected_element = pseudorandom_element(HODGE.elements_of_harmony, pseudoseed("twilightsparkle"))
                 eligible_card:set_seal(selected_element, nil, true) -- if you queue it the other jokers can still choose it as if it has no seal
                 G.E_MANAGER:add_event(Event({func = function()
                     play_sound("tarot1")
@@ -37,8 +36,6 @@ SMODS.Joker {
         end
     end,
     blueprint_compat = true,
-    in_pool = function(self,args)
-    end,
     set_badges = function(self,card,badges)
         badges[#badges+1] = HODGE.badge('category','mlp')
         badges[#badges+1] = HODGE.badge('credit','jorse')
