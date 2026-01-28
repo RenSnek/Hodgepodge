@@ -261,6 +261,22 @@ HODGE.joker_from_sort_id = function(id)
     return nil
 end
 
+HODGE.fake_locked_joker = function(key)
+    SMODS.Joker {
+        key = key.."_fakelocked",
+        pos = {x=8,y=9}, -- The locked joker sprite
+        rarity = nil,
+        discovered = true,
+        unlocked = true,
+        in_pool = function(self)
+            return false
+        end,
+        set_card_type_badge = function(self,card,badges)
+            return {}
+        end,
+    }
+end
+
 --  HODGE.bias_shuffle(G.deck.cards,
 --      [{
 --          match = function(item) return HODGE.table_contains(HODGE.elements_of_harmony,item.seal) end,
@@ -694,6 +710,8 @@ HODGE.load_script("objects/jokers/joke/bluelatro.lua")
 -- Page 5 - UTDR
 -- HODGE.load_script("objects/jokers/utdr/prophecy.lua")
 
+------ Fusion Jokers ------
+HODGE.load_script("objects/jokers/fusions/twishy.lua")
 
 ------ Blinds ------
 HODGE.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL

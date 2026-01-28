@@ -1155,6 +1155,32 @@ return {
 				["text"] = {
 					"what if balatro was {C:blue}Blue{C:dark_edition,E:1}...{}"
 				}
+			},
+
+			-- Fusion Jokers
+			["j_hodge_twishy"] = {
+				["name"] = "Twishy",
+				["text"] = {
+					{
+						"All {C:attention}scoring{} cards gain",
+						"a random {C:attention}Element of Harmony{}"
+					},
+					{
+						"Gains {X:mult,C:white}X#1#{} Mult per",
+						"{C:attention}Element of Harmony{}",
+						"in full deck",
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
+					}
+				}
+			},
+			["j_hodge_twishy_fakelocked"] = {
+				["name"] = "Locked",
+				["text"] = {
+					{
+						"This Joker requires",
+						"the {C:attention}Fusion Jokers{} mod!"
+					}
+				}
 			}
 		},
 		["Planet"] = {
