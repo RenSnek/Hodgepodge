@@ -27,7 +27,7 @@
 -- Her Oath Pin: Create a random pact (Add alongside pacts lol)
 -- Solver: Create last used Mystery card
 -- At Choir: Create a random cassette (Add alongside cassettes lol)
--- Ice Juts:  
+-- St Juice:  
 -- Rem Hit: Create a random Power Card (A rem is a unit of health effects from radiation) 
 -- Woeful Horn Fete: Create 2 random Potion Ingredients (Add alongside potions lol)
 -- Nth Tergs: (A terg is like a part of an insects body or smth)
@@ -126,6 +126,212 @@ SMODS.Consumable {
             localize(card.ability.suit_conv,'suits_plural'),
             colours = { G.C.SUITS[card.ability.suit_conv] }
         }}
+    end
+}
+
+SMODS.Consumable {
+    key = 'mono',
+    set = 'mystery',
+    atlas = "anagrarot_atlas",
+    pos = {x=7,y=1},
+    config = {max_highlighted = 4},
+    loc_vars = function(self, info_queue, card)
+        return {vars = {
+            card.ability.max_highlighted
+        }}
+    end,
+    use = function(self,card,area,copier)
+        local highlighted = {}
+        for _,card in ipairs(G.hand.cards) do
+            if card.highlighted then
+                table.insert(highlighted,card)
+            end
+        end
+        G.E_MANAGER:add_event(Event({trigger='after',delay=0.4,func = function()
+                play_sound("tarot1")
+                card:juice_up(0.3, 0.5)
+                return true end}))
+
+        for i = 1, #highlighted do
+            local percent = 1.15 - (i - 0.999) / (#highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    highlighted[i]:flip()
+                    play_sound('card1', percent)
+                    highlighted[i]:juice_up(0.3,0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+        for i = 1, #highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.1,
+                func = function()
+                    assert(SMODS.change_base(highlighted[i],highlighted[1].base.suit))
+                    return true
+                end
+            }))
+        end
+        for i = 1, #highlighted do
+            local percent = 1.15 - (i - 0.999) / (#highlighted - 0.998) * 0.3
+            
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    highlighted[i]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    highlighted[i]:juice_up(0.3,0.3)
+                    return true
+                end
+            }))
+        end
+    end,
+    can_use = function(self,card)
+        local highlighted = {}
+        for _,card in ipairs(G.hand.cards) do
+            if card.highlighted then
+                table.insert(highlighted,card)
+            end
+        end
+        return G.hand and #highlighted <= card.ability.max_highlighted and #highlighted > 1 and not SMODS.has_no_suit(highlighted[1])
+    end
+}
+
+SMODS.Consumable {
+    key = 'uns',
+    set = 'mystery',
+    atlas = "anagrarot_atlas",
+    pos = {x=8,y=1},
+    config = {max_highlighted = 3},
+    loc_vars = function(self, info_queue, card)
+        return {vars = {
+            card.ability.max_highlighted
+        }}
+    end,
+    use = function(self,card,area,copier)
+        local highlighted = {}
+        for _,card in ipairs(G.hand.cards) do
+            if card.highlighted then
+                table.insert(highlighted,card)
+            end
+        end
+        G.E_MANAGER:add_event(Event({trigger='after',delay=0.4,func = function()
+                play_sound("tarot1")
+                card:juice_up(0.3, 0.5)
+                return true end}))
+
+        for i = 1, #highlighted do
+            local percent = 1.15 - (i - 0.999) / (#highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    highlighted[i]:flip()
+                    play_sound('card1', percent)
+                    highlighted[i]:juice_up(0.3,0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+        for i = 1, #highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.1,
+                func = function()
+                    assert(SMODS.modify_rank(highlighted[i],highlighted[#highlighted]:get_id()-highlighted[i]:get_id()))
+                    return true
+                end
+            }))
+        end
+        for i = 1, #highlighted do
+            local percent = 1.15 - (i - 0.999) / (#highlighted - 0.998) * 0.3
+            
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    highlighted[i]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    highlighted[i]:juice_up(0.3,0.3)
+                    return true
+                end
+            }))
+        end
+    end,
+    can_use = function(self,card)
+        local highlighted = {}
+        for _,card in ipairs(G.hand.cards) do
+            if card.highlighted then
+                table.insert(highlighted,card)
+            end
+        end
+        return G.hand and #highlighted <= card.ability.max_highlighted and #highlighted > 1 and not SMODS.has_no_rank(highlighted[#highlighted])
+    end
+}
+
+SMODS.Consumable {
+    key = 'lowrd',
+    set = 'mystery',
+    atlas = "anagrarot_atlas",
+    pos = {x=10,y=1},
+    config = {},
+    loc_vars = function(self, info_queue, card)
+        return {vars = {
+        }}
+    end,
+    use = function(self,card,area,copier)
+        G.E_MANAGER:add_event(Event({trigger='after',delay=0.4,func = function()
+                play_sound("tarot1")
+                card:juice_up(0.3, 0.5)
+                return true end}))
+
+        for i = 1, #G.hand.cards do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.cards[i]:flip()
+                    play_sound('card1', percent)
+                    G.hand.cards[i]:juice_up(0.3,0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+        for i = 1, #G.hand.cards do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.1,
+                func = function()
+                    assert(SMODS.modify_rank(G.hand.cards[i],-1))
+                    return true
+                end
+            }))
+        end
+        for i = 1, #G.hand.cards do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
+            
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.15,
+                func = function()
+                    G.hand.cards[i]:flip()
+                    play_sound('tarot2', percent, 0.6)
+                    G.hand.cards[i]:juice_up(0.3,0.3)
+                    return true
+                end
+            }))
+        end
+    end,
+    can_use = function(self,card)
+        return G.hand and #G.hand.cards > 0 
     end
 }
 

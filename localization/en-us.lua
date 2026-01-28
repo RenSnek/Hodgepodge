@@ -393,6 +393,31 @@ return {
 					"{C:attention}#1#{} selected cards",
 					"to {V:1}#2#{}"
 				}
+			},
+			
+			["c_hodge_mono"] = {
+				["name"] = "Mono",
+				["text"] = {
+					"Converts up to {C:attention}#1#",
+					"selected cards to",
+					"the {C:attention}leftmost's suit{}"
+				}
+			},
+			["c_hodge_uns"] = {
+				["name"] = "Uns",
+				["text"] = {
+					"Converts up to {C:attention}#1#",
+					"selected cards to",
+					"the {C:attention}rightmost's rank{}"
+				}
+			},
+
+			["c_hodge_lowrd"] = {
+				["name"] = "Low'r'd",
+				["text"] = {
+					"Lowers rank of",
+					"{C:attention}all{} held cards by {C:attention}1{}"
+				}
 			}
 		},
 		["Blind"] = {
