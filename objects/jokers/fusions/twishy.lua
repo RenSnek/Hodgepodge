@@ -26,7 +26,7 @@ if FusionJokers then
         atlas = "jokers_atlas",
         pos = {x=0,y=HODGE.atlas_y.misc[1]},
         rarity = "fuse_fusion",
-        cost = 10,
+        cost = 12,
         calculate = function(self,card,context)
             if context.joker_main then
                 -- Twilight Effect
@@ -64,7 +64,6 @@ if FusionJokers then
         blueprint_compat = true,
         set_badges = function(self,card,badges)
             badges[#badges+1] = HODGE.badge('category','mlp')
-            badges[#badges+1] = HODGE.badge('credit','jorse')
         end
     }
 
@@ -78,5 +77,5 @@ if FusionJokers then
     }
     
 else
-    HODGE.fake_locked_joker("twishy")
+    HODGE.fake_locked_joker("twishy","fusionjokers")
 end

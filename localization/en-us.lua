@@ -835,8 +835,8 @@ return {
 			["j_hodge_stopsign"] = {
 				["name"] = "Stop Sign",
 				["text"] = {
-					"Scored {C:attention}#1#s{} have a {C:green}#2# in #3#{}",
-					"chance to gain {C:mult}+#4#{} Mult",
+					"Scored {C:attention}#1#s{} have a {C:green}#2# in #3#{} chance",
+					"to permanently gain {C:mult}+#4#{} Mult",
 					"{C:inactive,s:0.8}8 fantastic sides and 8 awesome angles{}",
 				},
 			},
@@ -1183,22 +1183,7 @@ return {
 			},
 
 			-- Fusion Jokers
-			["j_hodge_twishy"] = {
-				["name"] = "Twishy",
-				["text"] = {
-					{
-						"All {C:attention}scoring{} cards gain",
-						"a random {C:attention}Element of Harmony{}"
-					},
-					{
-						"Gains {X:mult,C:white}X#1#{} Mult per",
-						"{C:attention}Element of Harmony{}",
-						"in full deck",
-						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
-					}
-				}
-			},
-			["j_hodge_twishy_fakelocked"] = {
+			["j_hodge_modlock_fusionjokers"] = {
 				["name"] = "Locked",
 				["text"] = {
 					{
@@ -1206,7 +1191,32 @@ return {
 						"the {C:attention}Fusion Jokers{} mod!"
 					}
 				}
-			}
+			},
+			["j_hodge_twishy"] = {
+				["name"] = "Twishy",
+				["text"] = {
+					{
+						"Gains {X:mult,C:white}X#1#{} Mult per",
+						"{C:attention}Element of Harmony{}",
+						"in full deck",
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive})",
+					},
+					{
+						"All {C:attention}scoring{} cards gain",
+						"a random {C:attention}Element of Harmony{}",
+						"{C:inactive}(Twilight Sparkle + Fluttershy){}"
+					}
+				}
+			},
+			["j_hodge_bluestopsign"] = {
+				["name"] = "Blue Stop Sign",
+				["text"] = {
+					"Scored {C:attention}#1#s{} permanently",
+					"gain {X:chips,C:white}X#2#{} Chips",
+					"{C:inactive}(Stop Sign + {C:dark_edition,E:1}???{C:inactive}){}",
+					"{C:inactive,s:0.8}so imagine a {C:chips,s:0.8}blue{C:inactive,s:0.8} stop sign instead.{}",
+				}
+			},
 		},
 		["Planet"] = {
 			["c_hodge_avalon"] = {
