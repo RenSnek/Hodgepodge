@@ -1217,6 +1217,15 @@ return {
 					"{C:inactive,s:0.8}so imagine a {C:chips,s:0.8}blue{C:inactive,s:0.8} stop sign instead.{}",
 				}
 			},
+			["j_hodge_neverpunished"] = {
+				["name"] = "Never Punished",
+				["text"] = {
+					"{X:green,C:white}X#1#{} to all {C:attention}listed {C:green,E:1}probabilities{}",
+					"{C:attention}Doubles{} when a probability {C:attention}fails{}",
+					"{C:red}Resets{} when a probability {C:attention}succeeds{}",
+					"{C:inactive}(Oops! All 6s + Big Gamba)"
+				}
+			},
 		},
 		["Planet"] = {
 			["c_hodge_avalon"] = {

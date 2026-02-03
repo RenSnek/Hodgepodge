@@ -718,6 +718,7 @@ HODGE.load_script("objects/jokers/joke/bluelatro.lua")
 ------ Fusion Jokers ------
 HODGE.load_script("objects/jokers/fusions/twishy.lua")
 HODGE.load_script("objects/jokers/fusions/bluestopsign.lua")
+HODGE.load_script("objects/jokers/fusions/neverpunished.lua")
 
 ------ Blinds ------
 HODGE.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL
