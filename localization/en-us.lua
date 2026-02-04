@@ -920,9 +920,9 @@ return {
 			["j_hodge_amber"] = {
 				["name"] = "Amber",
 				["text"] = {
-					"{C:green}0 in #3#{} chance to gain {C:chips}+#1# Hand{} ",
-					"Increases by {C:green}#2# in #3#{} per", "scoring {C:hodge_suns}Sun{} card in played hand",
-					"{C:inactive,s:0.9}(eg. #4# scoring Suns = #5# in #3#){}"
+					"Played cards with {C:hodge_suns}Sun{} suit",
+					"level up played hand by",
+					"{C:attention}#1#{} levels when scored"
 				},
 			},
 			["j_hodge_moonrock"] = {

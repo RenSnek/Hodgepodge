@@ -1,31 +1,18 @@
 SMODS.Joker {
     key = "amber",
-    -- loc_txt = {
-    --     name = "Summer Sun Celebration",
-    --     text = {
-    --         "Played cards with",
-    --         "{C:hodge_suns}Sun{} suit give",
-    --         "{C:mult}+3{} Mult when scored"
-    --     }
-    -- },
     loc_vars = function (self,info_queue,card)
-        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.odds, 'amber')
-        local example_count = 3
         return {
             vars = {
-                card.ability.extra.hands_gain,
-                numerator,
-                denominator,
-                example_count,
-                numerator * example_count
+                card.ability.extra.hand_level
             }
         }
     end,
     config = {
         extra = {
-            odds = 5,
-            numerator = 1,
-            hands_gain = 1
+            -- odds = 5,
+            -- numerator = 1,
+            -- hands_gain = 1
+            hand_level = 0.1
         }
     },
     atlas = "jokers_atlas",
@@ -33,15 +20,9 @@ SMODS.Joker {
     rarity = 2,
     cost = 7,
     calculate = function(self,card,context)
-        if context.joker_main then
-            local suns = 0
-            for k, playing_card in ipairs(context.scoring_hand) do
-                if playing_card.base.suit == "hodge_suns" then
-                    suns = suns + 1
-                end
-            end
-            if SMODS.pseudorandom_probability(card, 'amber', suns*card.ability.extra.numerator, card.ability.extra.odds, 'amber') then
-                ease_hands_played(card.ability.extra.hands_gain)
+        if context.individual and context.cardarea == G.play then
+            if context.other_card.base.suit == "hodge_suns" then
+                SMODS.upgrade_poker_hands({hands = context.scoring_name, level_up = 0.1, from = card})
             end
         end
     end,
