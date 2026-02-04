@@ -282,6 +282,11 @@ HODGE.fake_locked_joker = function(key,mod)
     }
 end
 
+HODGE.hand_level_colour = function(lvl)
+    local capped_lvl = math.min(lvl, 7)
+    return mix_colours(G.C.HAND_LEVELS[math.floor(capped_lvl)],G.C.HAND_LEVELS[math.ceil(capped_lvl)],1-(capped_lvl-math.floor(capped_lvl)))
+end
+
 --  HODGE.bias_shuffle(G.deck.cards,
 --      [{
 --          match = function(item) return HODGE.table_contains(HODGE.elements_of_harmony,item.seal) end,
