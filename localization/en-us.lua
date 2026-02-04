@@ -925,12 +925,11 @@ return {
 					"{C:attention}#1#{} levels when scored"
 				},
 			},
-			["j_hodge_moonrock"] = {
+			["j_hodge_moonstone"] = {
 				["name"] = "Moonstone",
 				["text"] = {
-					"{C:green}0 in #3#{} chance to gain {C:mult}+#1# Discard{} ",
-					"Increases by {C:green}#2# in #3#{} per", "scoring {C:hodge_moons}Moon{} card in played hand",
-					"{C:inactive,s:0.9}(eg. #4# scoring Moons = #5# in #3#){}"
+					"Played cards with {C:hodge_moons}Moon{} suit",
+					"{C:purple}balance{} score by {C:attention}#1#%{} when scored"
 				},
 			},
 			["j_hodge_rainbowdash"] = {

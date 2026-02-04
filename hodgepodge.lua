@@ -683,7 +683,7 @@ HODGE.load_script("objects/jokers/mlp/summersun.lua")
 HODGE.load_script("objects/jokers/mlp/nightmarenight.lua")
 HODGE.load_script("objects/jokers/mlp/twilightsparkle.lua")
 HODGE.load_script("objects/jokers/mlp/amber.lua")
-HODGE.load_script("objects/jokers/mlp/moonrock.lua")
+HODGE.load_script("objects/jokers/mlp/moonstone.lua")
 
 HODGE.load_script("objects/jokers/mlp/rainbowdash.lua")
 HODGE.load_script("objects/jokers/mlp/rarity.lua")
