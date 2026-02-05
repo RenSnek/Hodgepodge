@@ -1191,6 +1191,32 @@ return {
 					}
 				}
 			},
+			["j_hodge_suncleric"] = {
+				["name"] = "Sun Cleric",
+				["text"] = {
+					"Played cards with {C:hodge_suns}Sun{} suit",
+					"level up played hand by",
+					"{C:attention}#1#{} levels and give {C:mult}+#2#{} Mult",
+					"per hand level when scored",
+					"{C:inactive}(Summer Sun Celebration + Amber)"
+				},
+			},
+			["j_hodge_moonrogue"] = {
+				["name"] = "Moon Rogue",
+				["text"] = {
+					"Played cards with {C:hodge_moons}Moon{} suit",
+					"{C:purple}balance{} score by {C:attention}#1#%{} when scored",
+					"Gains {C:attention}#2#%{} when a {C:spectral}Spectral{} is used",
+					"{C:inactive}(Nightmare Night + Moonstone)"
+				},
+			},
+			["j_hodge_cockncat"] = {
+				["name"] = "Cocksley and Catapult",
+				["text"] = {
+					"{C:blue}+#1#{} Hands, {C:red}+#2#{} Discards, {C:attention}+#3#{} Hand Size",
+					"{C:inactive}(Cocksley + Catapult)"
+				},
+			},
 			["j_hodge_twishy"] = {
 				["name"] = "Twishy",
 				["text"] = {
