@@ -1233,6 +1233,17 @@ return {
 					}
 				}
 			},
+			["j_hodge_immoralimmortal"] = {
+				["name"] = "Immoral Immortal",
+				["text"] = {
+					{
+						"{X:mult,C:white}X#1#{} Mult",
+						"Gains {X:mult,C:white}X#2#{} when a card is {C:attention}destroyed{}",
+						"{C:inactive}(Vampire + TwiShy){}",
+						"{C:inactive}(Twilight Sparkle + Flutterbat){}",
+					}
+				}
+			},
 			["j_hodge_bluestopsign"] = {
 				["name"] = "Blue Stop Sign",
 				["text"] = {

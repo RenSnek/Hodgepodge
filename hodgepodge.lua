@@ -727,6 +727,7 @@ HODGE.load_script("objects/jokers/fusions/suncleric.lua")
 HODGE.load_script("objects/jokers/fusions/moonrogue.lua")
 HODGE.load_script("objects/jokers/fusions/cockncat.lua")
 HODGE.load_script("objects/jokers/fusions/twishy.lua")
+HODGE.load_script("objects/jokers/fusions/immoralimmortal.lua")
 HODGE.load_script("objects/jokers/fusions/bluestopsign.lua")
 HODGE.load_script("objects/jokers/fusions/neverpunished.lua")
 
