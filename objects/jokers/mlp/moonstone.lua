@@ -18,19 +18,9 @@ SMODS.Joker {
     cost = 7,
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
-            if context.other_card.base.suit == "hodge_moons" then
-                local balance_chips = ((1-card.ability.extra.balance)*hand_chips) + (card.ability.extra.balance*((hand_chips+mult)/2))
-                local balance_mult = ((1-card.ability.extra.balance)*mult) + (card.ability.extra.balance*((hand_chips+mult)/2))
-                
-                local chips_diff = balance_chips - hand_chips 
-                local mult_diff = balance_mult - mult
-                
+            if context.other_card.base.suit == "hodge_moons" then                
                 return {
-                    chips = chips_diff,
-                    mult = mult_diff,
-                    message = "Balance!",
-                    colour = G.C.PURPLE,
-                    remove_default_message = true
+                    hodge_partial_balance = card.ability.extra.balance
                 }
             end
         end

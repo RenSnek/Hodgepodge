@@ -42,18 +42,8 @@ SMODS.Edition {
     disable_base_shader = true,
     calculate = function(self, card, context)
         if (context.main_scoring and context.cardarea == G.play) or context.post_joker then
-            local balance_chips = ((1-card.edition.extra.balance)*hand_chips) + (card.edition.extra.balance*((hand_chips+mult)/2))
-            local balance_mult = ((1-card.edition.extra.balance)*mult) + (card.edition.extra.balance*((hand_chips+mult)/2))
-            
-            local chips_diff = balance_chips - hand_chips 
-            local mult_diff = balance_mult - mult
-            
             return {
-                chips = chips_diff,
-                mult = mult_diff,
-                message = "Balance!",
-                colour = G.C.PURPLE,
-                remove_default_message = true
+                hodge_partial_balance = card.edition.extra.balance
             }
         end
     end,

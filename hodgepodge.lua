@@ -28,6 +28,8 @@ HODGE.calculate = function(self,context)
     end
 end
 
+table.insert(SMODS.other_calculation_keys,"hodge_partial_balance")
+
 ----------------------------
 ----- GLOBAL VARIABLES -----
 ----------------------------
