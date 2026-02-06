@@ -55,7 +55,7 @@ SMODS.Joker {
                     card.base.value = card.hodge_orig_value
                     card.hodge_orig_value = nil
                     
-                    if rank < 10 then rank = tostring(rank)
+                    if rank <= 10 then rank = tostring(rank)
                     elseif rank == 11 then rank = 'Jack'
                     elseif rank == 12 then rank = 'Queen'
                     elseif rank == 13 then rank = 'King'
