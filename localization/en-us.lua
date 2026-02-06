@@ -1030,6 +1030,31 @@ return {
 					"{C:mult}+#1#{} Mult when scored",
 				},
 			},
+			["j_hodge_snakesandladders"] = {
+				["name"] = "Snakes and Ladders",
+				["text"] = {
+					"Played {C:hodge_snake}Snakes{} have a {C:green}#1# in #2#{} chance",
+					"to {C:attention}decrease{} rank by {C:attention}#1#{} when scored",
+					"Played {C:hodge_ladders}Ladders{} have a {C:green}#1# in #2#{} chance",
+					"to {C:attention}increase{} rank by {C:attention}#1#{} when scored",
+				},
+			},
+			["j_hodge_jade"] = {
+				["name"] = "Jade",
+				["text"] = {
+					"Played {C:hodge_snake}Snakes{} increase {C:green}numerators{}",
+					"by {C:green}#1#{} for this hand when scored",
+					"{C:inactive}(Currently {C:green}+#2#{C:inactive})"
+				},
+			},
+			["j_hodge_amethyst"] = {
+				["name"] = "Amethyst",
+				["text"] = {
+					"Played {C:hodge_ladders}Ladders{} have a {C:green}#1# in #2#{} chance",
+					"to {C:attention}upgrade{} {C:dark_edition}edition{} when scored",
+					"{C:inactive,s:0.9}(None > Foil > Holo > Poly > Negative)"
+				},
+			},
 			["j_hodge_lumi"] = {
 				["name"] = "Lumi",
 				["text"] = {
