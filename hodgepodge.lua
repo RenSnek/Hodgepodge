@@ -722,14 +722,19 @@ HODGE.load_script("objects/jokers/joke/bluelatro.lua")
 -- Page 5 - UTDR
 -- HODGE.load_script("objects/jokers/utdr/prophecy.lua")
 
------- Fusion Jokers ------
+------ Crossmod ------
 HODGE.load_script("objects/jokers/fusions/suncleric.lua")
 HODGE.load_script("objects/jokers/fusions/moonrogue.lua")
 HODGE.load_script("objects/jokers/fusions/cockncat.lua")
+
 HODGE.load_script("objects/jokers/fusions/twishy.lua")
 HODGE.load_script("objects/jokers/fusions/immoralimmortal.lua")
 HODGE.load_script("objects/jokers/fusions/bluestopsign.lua")
 HODGE.load_script("objects/jokers/fusions/neverpunished.lua")
+
+
+HODGE.load_script("objects/jokers/misc/deceitfuljoker.lua")
+HODGE.load_script("objects/jokers/misc/covetousjoker.lua")
 
 ------ Blinds ------
 HODGE.load_script("objects/blinds/name.lua") -- I CURSE THE NAME THE ONE BEHIND IT ALLLLLLLLLLLLLLLLLLLLLLL

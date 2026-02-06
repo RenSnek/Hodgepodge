@@ -1014,6 +1014,22 @@ return {
 					"{C:attention}retriggered #1# times{}"
 				},
 			},
+			["j_hodge_deceitfuljoker"] = {
+				["name"] = "Deceitful Joker",
+				["text"] = {
+					"Played cards with",
+					"{C:hodge_snake}Snake{} suit give",
+					"{C:mult}+#1#{} Mult when scored",
+				},
+			},
+			["j_hodge_covetousjoker"] = {
+				["name"] = "Covetous Joker",
+				["text"] = {
+					"Played cards with",
+					"{C:hodge_ladders}Ladder{} suit give",
+					"{C:mult}+#1#{} Mult when scored",
+				},
+			},
 			["j_hodge_lumi"] = {
 				["name"] = "Lumi",
 				["text"] = {
