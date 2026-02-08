@@ -1251,6 +1251,27 @@ return {
 					"{C:inactive}(Nightmare Night + Moonstone)"
 				},
 			},
+			["j_hodge_snakemerchant"] = {
+				["name"] = "Snake Merchant",
+				["text"] = {
+					"Played {C:hodge_snake}Snakes{} increase {C:green}numerators{}",
+					"by {C:green}#1#{} for this hand when scored",
+					"{C:attention}Retrigger{} scored cards once for each",
+					"{C:attention}successful{} {C:green}probability{} this round",
+					"{C:inactive}(Currently {C:green}+#2#{C:inactive}, {C:attention}#3#{C:inactive} retriggers)",
+					"{C:inactive}(Deceitful Joker + Jade)"
+				},
+			},
+			["j_hodge_laddervizier"] = {
+				["name"] = "Ladder Vizier",
+				["text"] = {
+					"Played {C:hodge_ladders}Ladders{} have a {C:green}#1# in #2#{} chance",
+					"to {C:attention}upgrade{} {C:dark_edition}edition{} when scored",
+					"{C:dark_edition}Editioned{} playing cards also count",
+					"as all {C:attention}previous{} editions",
+					"{C:inactive}(Covetous Joker + Amethyst)"
+				},
+			},
 			["j_hodge_cockncat"] = {
 				["name"] = "Cocksley and Catapult",
 				["text"] = {
@@ -1280,8 +1301,19 @@ return {
 					{
 						"{X:mult,C:white}X#1#{} Mult",
 						"Gains {X:mult,C:white}X#2#{} when a card is {C:attention}destroyed{}",
-						"{C:inactive}(Vampire + TwiShy){}",
+						"{C:inactive}(Vampire + Twishy){}",
 						"{C:inactive}(Twilight Sparkle + Flutterbat){}",
+					}
+				}
+			},
+			["j_hodge_cheesepie"] = {
+				["name"] = "Cheese Pie",
+				["text"] = {
+					{
+						"Retrigger all played cards",
+						"Played cards give {X:mult,C:white}X#1#{} Mult",
+						"when {C:attention}retriggered{}",
+						"{C:inactive}(Pinkie Pie + Cheese Sandwich){}"
 					}
 				}
 			},

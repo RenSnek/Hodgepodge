@@ -414,6 +414,18 @@ payload = '''
 '''
 match_indent = true
 
+# Nicked from sealsoneveryting
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = '''SMODS.calculate_quantum_enhancements(card, effects, context)'''
+position = "after"
+payload = '''
+HODGE.calculate_quantum_editions(card, effects, context)
+'''
+match_indent = true
+times = 3
+
 # [[patches]]
 # [patches.pattern]
 # target = "functions/state_events.lua"

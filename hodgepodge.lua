@@ -34,15 +34,28 @@ table.insert(SMODS.other_calculation_keys,"hodge_partial_balance")
 ----- GLOBAL VARIABLES -----
 ----------------------------
 
+SMODS.Gradient {
+    key = "rainbow",
+    colours = {
+        G.C.RED,
+        G.C.ORANGE,
+        G.C.MONEY,
+        G.C.GREEN,
+        G.C.BLUE,
+        G.C.LEGENDARY
+    }
+}
+
 HODGE.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","hodge_laughter","hodge_generosity","hodge_magic"}
 
 HODGE.atlas_y = {
     misc      = { 0 },
-    joke      = { 2, 12 },
+    joke      = { 2, 13 },
     mlp       = { 4 },
     legendary = { 6 },
-    food      = { 10 },
-    utdr      = { 11 },
+    food      = { 11 },
+    utdr      = { 12 },
+    crossmod  = { 8 },
 
     soul      = { 1, 3, 5, 7 }
 }
@@ -359,6 +372,55 @@ HODGE.force_front_shuffle = function(list, condition, lower_bound, seed)
         end
     end
 end
+
+-- Stolen from seals on everything
+function HODGE.calculate_quantum_editions(card,effects,context)
+    if not card:can_calculate(context.ignore_debuff, context.remove_playing_cards) then return nil end
+
+    context.extra_edition = true
+    local extra_editions = HODGE.get_quantum_editions(card)
+    table.sort(extra_editions, function(a,b) return G.P_CENTERS["e_"..a].order < G.P_CENTERS["e_"..b].order end)
+    local old_edition = card.edition and copy_table(card.edition) or nil
+    for i,v in ipairs(extra_editions) do
+        local ed_key = "e_"..v
+        if G.P_CENTERS[ed_key] then
+            local cardedition = {
+                [v] = true,
+                type = v,
+                key = ed_key
+            }
+            for k,v in pairs(G.P_CENTERS[ed_key].config) do
+                cardedition[k] = copy_table(v)
+            end
+            card.edition = cardedition
+            card.ability.extra_edition = ed_key
+            G.GAME.triggered_edition = {card.sort_id,ed_key}
+            local eval = {edition = card:calculate_edition(context)}
+            G.GAME.triggered_edition = nil
+            if eval.edition then
+                table.insert(effects,eval)
+            end
+        end
+    end
+    card.edition = old_edition
+    context.extra_edition = nil
+end
+
+function HODGE.get_quantum_editions(card)
+    if next(SMODS.find_card('j_hodge_laddervizier')) and card.edition then
+        local editions = {"foil","holo","polychrome","negative"}
+        local quantum_editions = {}
+        for i,edition in ipairs(editions) do
+            if card.edition.type == edition then
+                return quantum_editions
+            else
+                table.insert(quantum_editions,edition)
+            end
+        end
+    end
+    return {}
+end
+
 
 HODGE.badge = function(type,id)
     local badges = {
@@ -726,9 +788,12 @@ HODGE.load_script("objects/jokers/joke/bluelatro.lua")
 HODGE.load_script("objects/jokers/fusions/suncleric.lua")
 HODGE.load_script("objects/jokers/fusions/moonrogue.lua")
 HODGE.load_script("objects/jokers/fusions/cockncat.lua")
+HODGE.load_script("objects/jokers/fusions/snakemerchant.lua")
+HODGE.load_script("objects/jokers/fusions/laddervizier.lua")
 
 HODGE.load_script("objects/jokers/fusions/twishy.lua")
 HODGE.load_script("objects/jokers/fusions/immoralimmortal.lua")
+HODGE.load_script("objects/jokers/fusions/cheesepie.lua")
 HODGE.load_script("objects/jokers/fusions/bluestopsign.lua")
 HODGE.load_script("objects/jokers/fusions/neverpunished.lua")
 

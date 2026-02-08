@@ -22,7 +22,7 @@ SMODS.Joker {
         if context.before and context.cardarea == G.jokers and not context.blueprint then
             card.ability.extra.triggered_cards = {}
         end
-        if context.individual and context.cardarea == G.play and HODGE.table_contains(HODGE.elements_of_harmony,context.other_card.seal) and context.blueprint then
+        if context.individual and context.cardarea == G.play and HODGE.table_contains(HODGE.elements_of_harmony,context.other_card.seal) and not context.blueprint then
             if HODGE.table_contains(card.ability.extra.triggered_cards, context.other_card) then
                 --retriggering
                 return {

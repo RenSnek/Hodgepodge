@@ -17,7 +17,7 @@ if FusionJokers then
             }
         },
         atlas = "jokers_atlas",
-        pos = {x=0,y=HODGE.atlas_y.misc[1]},
+        pos = {x=11,y=HODGE.atlas_y.crossmod[1]},
         rarity = "fuse_fusion",
         cost = 32,
         calculate = function(self,card,context)
