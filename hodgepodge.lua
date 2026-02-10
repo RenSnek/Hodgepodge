@@ -49,15 +49,15 @@ SMODS.Gradient {
 HODGE.elements_of_harmony = {"hodge_kindness","hodge_honesty","hodge_loyalty","hodge_laughter","hodge_generosity","hodge_magic"}
 
 HODGE.atlas_y = {
-    misc      = { 0 },
-    joke      = { 2, 13 },
-    mlp       = { 4 },
-    legendary = { 6 },
-    food      = { 11 },
-    utdr      = { 12 },
-    crossmod  = { 8 },
+    misc      = { 0, 2 },
+    joke      = { 4, 15 },
+    mlp       = { 6 },
+    legendary = { 8 },
+    food      = { 13 },
+    utdr      = { 14 },
+    crossmod  = { 10 },
 
-    soul      = { 1, 3, 5, 7 }
+    soul      = { 1, 3, 5, 7, 9 }
 }
 
 -----------------------

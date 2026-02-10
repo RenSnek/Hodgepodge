@@ -74,7 +74,7 @@
 --         }
 --     },
 --     atlas = "jokers_atlas",
---     pos = {x=10,y=HODGE.atlas_y.soul[4]},
+--     pos = {x=10,y=HODGE.atlas_y.soul[5]},
 --     soul_pos = {x=10,y=HODGE.atlas_y.legendary[1]},
 --     rarity = 4,
 --     cost = 20,
@@ -173,7 +173,7 @@ SMODS.Joker {
         }
     },
     atlas = "jokers_atlas",
-    pos = {x=10,y=HODGE.atlas_y.soul[4]},
+    pos = {x=10,y=HODGE.atlas_y.soul[5]},
     soul_pos = {x=10,y=HODGE.atlas_y.legendary[1]},
     rarity = 4,
     cost = 20,
