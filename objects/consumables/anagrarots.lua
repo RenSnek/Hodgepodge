@@ -101,6 +101,59 @@ SMODS.Consumable {
 }
 
 SMODS.Consumable {
+    key = 'solver',
+    set = 'mystery',
+    atlas = "anagrarot_atlas",
+    pos = {x=6,y=0},
+    config = {},
+    loc_vars = function(self, info_queue, card)
+        local solver_c = G.GAME.hodge_last_mystery and G.P_CENTERS[G.GAME.hodge_last_mystery] or nil
+        local last_mystery = solver_c and localize { type = 'name_text', key = solver_c.key, set = solver_c.set} or localize('k_none')
+        local colour = (not solver_c or solver_c.name == 'Solver') and G.C.RED or G.C.GREEN
+
+        if not (not solver_c or solver_c.name == 'Solver') then
+            info_queue[#info_queue+1] = solver_c
+        end
+
+        local main_end = {
+            {
+                n = G.UIT.C,
+                config = {align = "bm", padding = 0.02},
+                nodes = {
+                    {
+                        n = G.UIT.C,
+                        config = {align = "m", colour = colour, r = 0.05, padding = 0.05},
+                        nodes = {
+                            { n = G.UIT.T, config = { text = ' '..last_mystery..' ', colour = G.C.UI.TEXT_LIGHT, scale = 0.3, shadow = true } }
+                        }
+                    }
+                }
+            }
+        }
+
+        return { vars = {last_mystery}, main_end = main_end}
+    end,
+    use = function(self,card,area,copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                if G.consumeables.config.card_limit > #G.consumeables.cards then
+                    play_sound('timpani')
+                    SMODS.add_card({ key = G.GAME.hodge_last_mystery })
+                    card:juice_up(0.3,0.5)
+                end
+                return true
+            end
+        }))
+        delay(0.6)
+    end,
+    can_use = function(self,card)
+        return (#G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables) and G.GAME.hodge_last_mystery and G.GAME.hodge_last_msytery ~= 'c_hodge_mystery'
+    end
+}
+
+SMODS.Consumable {
     key = 'lived',
     set = 'mystery',
     atlas = "anagrarot_atlas",
@@ -292,46 +345,52 @@ SMODS.Consumable {
                 return true end}))
 
         for i = 1, #G.hand.cards do
-            local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.15,
-                func = function()
-                    G.hand.cards[i]:flip()
-                    play_sound('card1', percent)
-                    G.hand.cards[i]:juice_up(0.3,0.3)
-                    return true
-                end
-            }))
+            if not G.hand.cards[i].highlighted then
+                local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.15,
+                    func = function()
+                        G.hand.cards[i]:flip()
+                        play_sound('card1', percent)
+                        G.hand.cards[i]:juice_up(0.3,0.3)
+                        return true
+                    end
+                }))
+            end
         end
         delay(0.2)
         for i = 1, #G.hand.cards do
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.1,
-                func = function()
-                    assert(SMODS.modify_rank(G.hand.cards[i],-1))
-                    return true
-                end
-            }))
+            if not G.hand.cards[i].highlighted then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.1,
+                    func = function()
+                        assert(SMODS.modify_rank(G.hand.cards[i],-1))
+                        return true
+                    end
+                }))
+            end
         end
         for i = 1, #G.hand.cards do
-            local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
-            
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.15,
-                func = function()
-                    G.hand.cards[i]:flip()
-                    play_sound('tarot2', percent, 0.6)
-                    G.hand.cards[i]:juice_up(0.3,0.3)
-                    return true
-                end
-            }))
+            if not G.hand.cards[i].highlighted then
+                local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
+                
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.15,
+                    func = function()
+                        G.hand.cards[i]:flip()
+                        play_sound('tarot2', percent, 0.6)
+                        G.hand.cards[i]:juice_up(0.3,0.3)
+                        return true
+                    end
+                }))
+            end
         end
     end,
     can_use = function(self,card)
-        return G.hand and #G.hand.cards > 0 
+        return G.hand and #G.hand.cards > #G.hand.highlighted 
     end
 }
 

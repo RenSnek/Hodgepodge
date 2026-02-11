@@ -377,7 +377,15 @@ return {
 					"to {V:1}#2#{}"
 				}
 			},
-
+			["c_hodge_solver"] = {
+				["name"] = "Solver",
+				["text"] = {
+					"Creates the last",
+					"{C:tarot}Mystery{} card used",
+					"during this run",
+					"{s:0.9,C:tarot}Solver{s:0.8} excluded{}"
+				}
+			},
 			["c_hodge_lived"] = {
 				["name"] = "Lived",
 				["text"] = {
@@ -415,8 +423,8 @@ return {
 			["c_hodge_lowrd"] = {
 				["name"] = "Low'r'd",
 				["text"] = {
-					"Lowers rank of",
-					"{C:attention}all{} held cards by {C:attention}1{}"
+					"{C:attention}Lowers{} rank of all",
+					"{C:attention}non{}-selected cards by {C:attention}1{}"
 				}
 			}
 		},

@@ -357,6 +357,7 @@ position = "after"
 payload = '''
 
 self.GAME.hodge_blue = false
+self.GAME.hodge_last_mystery = nil
 self.GAME.hodge_scoring_ante = nil
 self.GAME.hodge_use_scoring_ante = 0 -- Jokers should add to this for true and subtract for false. If it's 0 then nothing wants it true, so it is not used.
 '''

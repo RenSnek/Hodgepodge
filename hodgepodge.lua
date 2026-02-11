@@ -26,6 +26,11 @@ HODGE.calculate = function(self,context)
             local ret = G.GAME.tags[i]:apply_to_run({type = 'end_of_round'})
         end
     end
+    if context.using_consumeable then
+        if context.consumeable.config.center.set == "mystery" then -- For the mystery card that creates the last used mystery card
+            G.GAME.hodge_last_mystery = context.consumeable.config.center_key
+        end
+    end
 end
 
 table.insert(SMODS.other_calculation_keys,"hodge_partial_balance")
